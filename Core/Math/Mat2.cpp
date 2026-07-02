@@ -1,6 +1,8 @@
 #include "Mat2.h"
+#include "MathUtils.h"
 #include <cmath>
 
+namespace Math {
 Mat2::Mat2() {
     m00 = 0.0f; m01 = 0.0f; m10 = 0.0f; m11 = 0.0f;
 }
@@ -128,7 +130,7 @@ Mat2 Mat2::Transposed() const {
 
 Mat2 Mat2::Inverse() const {
     float det = Determinant();
-    if (det == 0.0f) {
+    if(Math::IsZero(det)) {
         return Mat2::Zero();
     }
 
@@ -141,7 +143,7 @@ Mat2 Mat2::Inverse() const {
 
 bool Mat2::Invert() {
     float det = Determinant();
-    if (det == 0.0f) {
+    if(Math::IsZero(det)) {
         return false;
     }
 
@@ -164,13 +166,15 @@ bool Mat2::IsZero() const {
     return *this == Zero();
 }
 
-bool Mat2::operator==(const Mat2& other) const {
-    return m00 == other.m00 &&
-           m01 == other.m01 &&
-           m10 == other.m10 &&
-           m11 == other.m11;
+bool Mat2::operator==(const Mat2& other) const
+{
+    return Math::NearlyEqual(m00, other.m00) &&
+           Math::NearlyEqual(m01, other.m01) &&
+           Math::NearlyEqual(m10, other.m10) &&
+           Math::NearlyEqual(m11, other.m11);
 }
 
 bool Mat2::operator!=(const Mat2& other) const {
     return !(*this == other);
 }
+};

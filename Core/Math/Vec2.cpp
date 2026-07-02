@@ -1,6 +1,8 @@
 #include "Vec2.h"
+#include "MathUtils.h"
 #include <cmath> // Required for sqrt
 
+namespace Math{
 Vec2::Vec2() : x(0.0f), y(0.0f) {}
 
 Vec2::Vec2(float x, float y) : x(x), y(y) {}
@@ -20,7 +22,7 @@ float Vec2::Length() const
 void Vec2::Normalize() 
 {
     float len = Length();
-    if (len > 0.0f) 
+    if(!Math::IsZero(len)) 
     {
         x /= len;
         y /= len;
@@ -30,7 +32,7 @@ void Vec2::Normalize()
 Vec2 Vec2::Normalized() const 
 {
     float len = Length();
-    if (len > 0.0f) 
+    if(!Math::IsZero(len)) 
     {
         return Vec2(x / len, y / len);
     }
@@ -39,8 +41,7 @@ Vec2 Vec2::Normalized() const
 
 bool Vec2::IsZero() const 
 {
-    return x == 0.0f && y == 0.0f;
-}
+    return Math::IsZero(x) && Math::IsZero(y);}
 
 float Vec2::Dot(const Vec2& other) const 
 {
@@ -72,7 +73,7 @@ Vec2 Vec2::Reflect(const Vec2& normal) const
 Vec2 Vec2::Project(const Vec2& other) const 
 {
     float lenSq = other.LengthSquared();
-    if (lenSq == 0.0f) return Vec2(0.0f, 0.0f);
+    if(Math::IsZero(lenSq)) return Vec2(0.0f, 0.0f);
     
     float scalar = this->Dot(other) / lenSq;
     return other * scalar;
@@ -136,10 +137,11 @@ Vec2 Vec2::operator-() const
 
 bool Vec2::operator==(const Vec2& other) const 
 {
-    return (x == other.x) && (y == other.y);
+    return Math::NearlyEqual(x, other.x) && Math::NearlyEqual(y, other.y);
 }
 
 bool Vec2::operator!=(const Vec2& other) const 
 {
     return !(*this == other);
 }
+};
