@@ -2,7 +2,9 @@
 
 #include "../Core/Math/Vec2.h"
 #include "../Core/Math/Mat2.h"
+#include "../Core/Math/MathUtils.h"
 
+using namespace Math;
 int main()
 {
     Mat2 A(1,2,
@@ -71,6 +73,63 @@ int main()
     std::cout << C.m00 << " " << C.m01 << "\n";
     std::cout << C.m10 << " " << C.m11 << "\n";
 
+    std::cout << "\n========== MathUtils Demo ==========\n\n";
+
+std::cout << "PI = " << Math::PI << '\n';
+std::cout << "TWO_PI = " << Math::TWO_PI << '\n';
+std::cout << "HALF_PI = " << Math::HALF_PI << "\n\n";
+
+std::cout << "Clamp(15, 0, 10) = "
+          << Math::Clamp(15.0f, 0.0f, 10.0f)
+          << '\n';
+
+std::cout << "Lerp(0, 100, 0.25) = "
+          << Math::Lerp(0.0f, 100.0f, 0.25f)
+          << '\n';
+
+std::cout << "Min(3, 7) = "
+          << Math::Min(3.0f, 7.0f)
+          << '\n';
+
+std::cout << "Max(3, 7) = "
+          << Math::Max(3.0f, 7.0f)
+          << '\n';
+
+std::cout << "Abs(-42) = "
+          << Math::Abs(-42.0f)
+          << '\n';
+
+std::cout << "Sign(-10) = "
+          << Math::Sign(-10.0f)
+          << '\n';
+
+std::cout << "90 Degrees = "
+          << Math::DegreesToRadians(90.0f)
+          << " radians\n";
+
+std::cout << "PI Radians = "
+          << Math::RadiansToDegrees(Math::PI)
+          << " degrees\n";
+
+std::cout << "Square(6) = "
+          << Math::Square(6.0f)
+          << '\n';
+
+std::cout << "Cube(4) = "
+          << Math::Cube(4.0f)
+          << '\n';
+
+std::cout << "NearlyEqual(1.0, 1.0000001) = "
+          << Math::NearlyEqual(1.0f, 1.0000001f)
+          << '\n';
+
+std::cout << "IsZero(0.00000001) = "
+          << Math::IsZero(0.00000001f)
+          << '\n';
+
+std::cout << "IsFinite(42) = "
+          << Math::IsFinite(42.0f)
+          << '\n';
     std::cout << "\n=========================================================\n";
     return 0;
 }

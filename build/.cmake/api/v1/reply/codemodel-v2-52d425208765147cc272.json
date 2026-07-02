@@ -17,7 +17,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -34,7 +35,8 @@
 					[
 						0,
 						1,
-						2
+						2,
+						3
 					]
 				}
 			],
@@ -43,21 +45,28 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Mat2Tests::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Mat2Tests-Debug-a8917befd410df30e42a.json",
+					"jsonFile" : "target-Mat2Tests-Debug-a494ee6d2d01fa56867e.json",
 					"name" : "Mat2Tests",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "MathUtilsTests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MathUtilsTests-Debug-617e97e60f98b4ff4fd8.json",
+					"name" : "MathUtilsTests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "PhysicsEngineDemo::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-PhysicsEngineDemo-Debug-5733e5ff37b90d37a6b9.json",
+					"jsonFile" : "target-PhysicsEngineDemo-Debug-0c657b778d40f80b344a.json",
 					"name" : "PhysicsEngineDemo",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Vec2Tests::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Vec2Tests-Debug-f0b82cbc0b184aa8ea6d.json",
+					"jsonFile" : "target-Vec2Tests-Debug-37dd34b5e5db3aa346c4.json",
 					"name" : "Vec2Tests",
 					"projectIndex" : 0
 				}

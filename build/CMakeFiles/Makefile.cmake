@@ -54,4 +54,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/PhysicsEngineDemo.dir/DependInfo.cmake"
   "CMakeFiles/Vec2Tests.dir/DependInfo.cmake"
   "CMakeFiles/Mat2Tests.dir/DependInfo.cmake"
+  "CMakeFiles/MathUtilsTests.dir/DependInfo.cmake"
   )

@@ -1,5 +1,6 @@
 C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build/CMakeFiles/PhysicsEngineDemo.dir
 C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build/CMakeFiles/Vec2Tests.dir
 C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build/CMakeFiles/Mat2Tests.dir
+C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build/CMakeFiles/MathUtilsTests.dir
 C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build/CMakeFiles/edit_cache.dir
 C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build/CMakeFiles/rebuild_cache.dir

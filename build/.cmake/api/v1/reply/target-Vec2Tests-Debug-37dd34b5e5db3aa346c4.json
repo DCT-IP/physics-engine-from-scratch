@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "PhysicsEngineDemo.exe"
+			"path" : "Vec2Tests.exe"
 		},
 		{
-			"path" : "PhysicsEngineDemo.pdb"
+			"path" : "Vec2Tests.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -28,13 +28,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 38,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 32,
 				"parent" : 0
 			}
 		]
@@ -68,11 +68,12 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
-	"id" : "PhysicsEngineDemo::@6890427a1f51a3e7e1df",
+	"id" : "Vec2Tests::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -88,8 +89,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "PhysicsEngineDemo",
-	"nameOnDisk" : "PhysicsEngineDemo.exe",
+	"name" : "Vec2Tests",
+	"nameOnDisk" : "Vec2Tests.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -103,7 +104,8 @@
 			[
 				0,
 				1,
-				2
+				2,
+				3
 			]
 		}
 	],
@@ -112,7 +114,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Demo/main.cpp",
+			"path" : "Tests/Vec2Tests.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -125,6 +127,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Math/Mat2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Math/MathUtils.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

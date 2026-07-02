@@ -16,11 +16,13 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(ENGINE_SOURCES
     Core/Math/Vec2.cpp
     Core/Math/Mat2.cpp
+    Core/Math/MathUtils.cpp
 )
 
 set(ENGINE_HEADERS
     Core/Math/Vec2.h
     Core/Math/Mat2.h
+    Core/Math/MathUtils.h
 )
 
 # ==========================================================
@@ -51,5 +53,10 @@ add_executable(Vec2Tests
 
 add_executable(Mat2Tests
     Tests/Mat2Tests.cpp
+    ${ENGINE_SOURCES}
+)
+
+add_executable(MathUtilsTests
+    Tests/MathUtilsTests.cpp
     ${ENGINE_SOURCES}
 )

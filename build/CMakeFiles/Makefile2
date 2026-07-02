@@ -65,12 +65,14 @@ CMAKE_BINARY_DIR = C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\b
 all: CMakeFiles/PhysicsEngineDemo.dir/all
 all: CMakeFiles/Vec2Tests.dir/all
 all: CMakeFiles/Mat2Tests.dir/all
+all: CMakeFiles/MathUtilsTests.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
 codegen: CMakeFiles/PhysicsEngineDemo.dir/codegen
 codegen: CMakeFiles/Vec2Tests.dir/codegen
 codegen: CMakeFiles/Mat2Tests.dir/codegen
+codegen: CMakeFiles/MathUtilsTests.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -81,6 +83,7 @@ preinstall:
 clean: CMakeFiles/PhysicsEngineDemo.dir/clean
 clean: CMakeFiles/Vec2Tests.dir/clean
 clean: CMakeFiles/Mat2Tests.dir/clean
+clean: CMakeFiles/MathUtilsTests.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -90,12 +93,12 @@ clean: CMakeFiles/Mat2Tests.dir/clean
 CMakeFiles/PhysicsEngineDemo.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=5,6,7,8 "Built target PhysicsEngineDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=11,12,13,14,15 "Built target PhysicsEngineDemo"
 .PHONY : CMakeFiles/PhysicsEngineDemo.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/PhysicsEngineDemo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/PhysicsEngineDemo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 0
 .PHONY : CMakeFiles/PhysicsEngineDemo.dir/rule
@@ -107,7 +110,7 @@ PhysicsEngineDemo: CMakeFiles/PhysicsEngineDemo.dir/rule
 # codegen rule for target.
 CMakeFiles/PhysicsEngineDemo.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=5,6,7,8 "Finished codegen for target PhysicsEngineDemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=11,12,13,14,15 "Finished codegen for target PhysicsEngineDemo"
 .PHONY : CMakeFiles/PhysicsEngineDemo.dir/codegen
 
 # clean rule for target.
@@ -122,12 +125,12 @@ CMakeFiles/PhysicsEngineDemo.dir/clean:
 CMakeFiles/Vec2Tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=9,10,11,12 "Built target Vec2Tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=16,17,18,19,20 "Built target Vec2Tests"
 .PHONY : CMakeFiles/Vec2Tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Vec2Tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Vec2Tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 0
 .PHONY : CMakeFiles/Vec2Tests.dir/rule
@@ -139,7 +142,7 @@ Vec2Tests: CMakeFiles/Vec2Tests.dir/rule
 # codegen rule for target.
 CMakeFiles/Vec2Tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=9,10,11,12 "Finished codegen for target Vec2Tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=16,17,18,19,20 "Finished codegen for target Vec2Tests"
 .PHONY : CMakeFiles/Vec2Tests.dir/codegen
 
 # clean rule for target.
@@ -154,12 +157,12 @@ CMakeFiles/Vec2Tests.dir/clean:
 CMakeFiles/Mat2Tests.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=1,2,3,4 "Built target Mat2Tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=1,2,3,4,5 "Built target Mat2Tests"
 .PHONY : CMakeFiles/Mat2Tests.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Mat2Tests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Mat2Tests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 0
 .PHONY : CMakeFiles/Mat2Tests.dir/rule
@@ -171,13 +174,45 @@ Mat2Tests: CMakeFiles/Mat2Tests.dir/rule
 # codegen rule for target.
 CMakeFiles/Mat2Tests.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target Mat2Tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=1,2,3,4,5 "Finished codegen for target Mat2Tests"
 .PHONY : CMakeFiles/Mat2Tests.dir/codegen
 
 # clean rule for target.
 CMakeFiles/Mat2Tests.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/clean
 .PHONY : CMakeFiles/Mat2Tests.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/MathUtilsTests.dir
+
+# All Build rule for target.
+CMakeFiles/MathUtilsTests.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=6,7,8,9,10 "Built target MathUtilsTests"
+.PHONY : CMakeFiles/MathUtilsTests.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/MathUtilsTests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/MathUtilsTests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles 0
+.PHONY : CMakeFiles/MathUtilsTests.dir/rule
+
+# Convenience name for target.
+MathUtilsTests: CMakeFiles/MathUtilsTests.dir/rule
+.PHONY : MathUtilsTests
+
+# codegen rule for target.
+CMakeFiles/MathUtilsTests.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=6,7,8,9,10 "Finished codegen for target MathUtilsTests"
+.PHONY : CMakeFiles/MathUtilsTests.dir/codegen
+
+# clean rule for target.
+CMakeFiles/MathUtilsTests.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/clean
+.PHONY : CMakeFiles/MathUtilsTests.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

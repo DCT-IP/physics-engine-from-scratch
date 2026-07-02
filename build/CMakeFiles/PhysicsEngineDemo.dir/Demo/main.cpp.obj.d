@@ -142,4 +142,5 @@ CMakeFiles/PhysicsEngineDemo.dir/Demo/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/istream \
  C:/msys64/mingw64/include/c++/15.2.0/bits/istream.tcc \
  C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Vec2.h \
- C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.h
+ C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.h \
+ C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/MathUtils.h
