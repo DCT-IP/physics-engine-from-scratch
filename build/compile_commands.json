@@ -1,0 +1,56 @@
+[
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/PhysicsEngineDemo.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\PhysicsEngineDemo.dir\\Demo\\main.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Demo\\main.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Demo/main.cpp",
+  "output": "CMakeFiles/PhysicsEngineDemo.dir/Demo/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/PhysicsEngineDemo.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\PhysicsEngineDemo.dir\\Core\\Math\\Vec2.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Core\\Math\\Vec2.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Vec2.cpp",
+  "output": "CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Vec2.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/PhysicsEngineDemo.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\PhysicsEngineDemo.dir\\Core\\Math\\Mat2.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Core\\Math\\Mat2.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.cpp",
+  "output": "CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Mat2.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Vec2Tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Vec2Tests.dir\\Tests\\Vec2Tests.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Tests\\Vec2Tests.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Tests/Vec2Tests.cpp",
+  "output": "CMakeFiles/Vec2Tests.dir/Tests/Vec2Tests.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Vec2Tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Vec2Tests.dir\\Core\\Math\\Vec2.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Core\\Math\\Vec2.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Vec2.cpp",
+  "output": "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Vec2Tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Vec2Tests.dir\\Core\\Math\\Mat2.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Core\\Math\\Mat2.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.cpp",
+  "output": "CMakeFiles/Vec2Tests.dir/Core/Math/Mat2.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Mat2Tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Mat2Tests.dir\\Tests\\Mat2Tests.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Tests\\Mat2Tests.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Tests/Mat2Tests.cpp",
+  "output": "CMakeFiles/Mat2Tests.dir/Tests/Mat2Tests.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Mat2Tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Mat2Tests.dir\\Core\\Math\\Vec2.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Core\\Math\\Vec2.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Vec2.cpp",
+  "output": "CMakeFiles/Mat2Tests.dir/Core/Math/Vec2.cpp.obj"
+},
+{
+  "directory": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe  @CMakeFiles/Mat2Tests.dir/includes_CXX.rsp -g -std=gnu++17 -o CMakeFiles\\Mat2Tests.dir\\Core\\Math\\Mat2.cpp.obj -c C:\\Users\\dheem\\OneDrive\\Desktop\\physics-engine-from-scratch\\Core\\Math\\Mat2.cpp",
+  "file": "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.cpp",
+  "output": "CMakeFiles/Mat2Tests.dir/Core/Math/Mat2.cpp.obj"
+}
+]

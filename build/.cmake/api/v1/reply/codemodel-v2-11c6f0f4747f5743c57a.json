@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "PhysicsEngine",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Mat2Tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Mat2Tests-Debug-a8917befd410df30e42a.json",
+					"name" : "Mat2Tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "PhysicsEngineDemo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-PhysicsEngineDemo-Debug-5733e5ff37b90d37a6b9.json",
+					"name" : "PhysicsEngineDemo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Vec2Tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Vec2Tests-Debug-f0b82cbc0b184aa8ea6d.json",
+					"name" : "Vec2Tests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/build",
+		"source" : "C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

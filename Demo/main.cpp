@@ -1,105 +1,76 @@
-#include "../Core/Math/Vec2.h"
-
 #include <iostream>
+
+#include "../Core/Math/Vec2.h"
+#include "../Core/Math/Mat2.h"
 
 int main()
 {
-    std::cout << "========== Vec2 Demonstration ==========\n\n";
+    Mat2 A(1,2,
+           3,4);
 
-    Vec2 a(3.0f, 4.0f);
-    Vec2 b(1.0f, 2.0f);
+    Mat2 B(5,6,
+           7,8);
+    std::cout << "\n========================demo=============================\n";
+    std::cout << "Matrix A\n";
+    std::cout << A.m00 << " " << A.m01 << "\n";
+    std::cout << A.m10 << " " << A.m11 << "\n\n";
 
-    std::cout << "Vector A : (" << a.x << ", " << a.y << ")\n";
-    std::cout << "Vector B : (" << b.x << ", " << b.y << ")\n\n";
+    std::cout << "Matrix B\n";
+    std::cout << B.m00 << " " << B.m01 << "\n";
+    std::cout << B.m10 << " " << B.m11 << "\n\n";
 
-    // Addition
+    Mat2 C = A + B;
 
-    Vec2 add = a + b;
+    std::cout << "A + B\n";
+    std::cout << C.m00 << " " << C.m01 << "\n";
+    std::cout << C.m10 << " " << C.m11 << "\n\n";
 
-    std::cout << "A + B = ("
-              << add.x << ", "
-              << add.y << ")\n";
+    C = A - B;
 
-    // Subtraction
+    std::cout << "A - B\n";
+    std::cout << C.m00 << " " << C.m01 << "\n";
+    std::cout << C.m10 << " " << C.m11 << "\n\n";
 
-    Vec2 sub = a - b;
+    C = A * 2.0f;
 
-    std::cout << "A - B = ("
-              << sub.x << ", "
-              << sub.y << ")\n";
+    std::cout << "A * 2\n";
+    std::cout << C.m00 << " " << C.m01 << "\n";
+    std::cout << C.m10 << " " << C.m11 << "\n\n";
 
-    // Scalar Multiplication
+    C = A * B;
 
-    Vec2 mul = a * 2.0f;
+    std::cout << "A * B\n";
+    std::cout << C.m00 << " " << C.m01 << "\n";
+    std::cout << C.m10 << " " << C.m11 << "\n\n";
 
-    std::cout << "A * 2 = ("
-              << mul.x << ", "
-              << mul.y << ")\n";
+    Vec2 v(2,3);
 
-    // Scalar Division
+    Vec2 r = A * v;
 
-    Vec2 div = a / 2.0f;
+    std::cout << "A * Vec2 = ("
+              << r.x << ", "
+              << r.y << ")\n\n";
 
-    std::cout << "A / 2 = ("
-              << div.x << ", "
-              << div.y << ")\n\n";
+    std::cout << "Determinant = "
+              << A.Determinant()
+              << "\n\n";
 
-    // Length
+    std::cout << "Trace = "
+              << A.Trace()
+              << "\n\n";
 
-    std::cout << "Length of A = "
-              << a.Length() << '\n';
+    C = A.Transposed();
 
-    std::cout << "Length Squared of A = "
-              << a.LengthSquared() << "\n\n";
+    std::cout << "Transpose\n";
+    std::cout << C.m00 << " " << C.m01 << "\n";
+    std::cout << C.m10 << " " << C.m11 << "\n\n";
 
-    // Normalization
+    C = A.Inverse();
 
-    Vec2 unit = a.Normalized();
+    std::cout << "Inverse\n";
+    std::cout << C.m00 << " " << C.m01 << "\n";
+    std::cout << C.m10 << " " << C.m11 << "\n";
 
-    std::cout << "Normalized A = ("
-              << unit.x << ", "
-              << unit.y << ")\n";
-
-    std::cout << "Length = "
-              << unit.Length() << "\n\n";
-
-    // Dot Product
-
-    std::cout << "Dot(A, B) = "
-              << a.Dot(b) << "\n\n";
-
-    // Distance
-
-    std::cout << "Distance(A, B) = "
-              << a.Distance(b) << "\n\n";
-
-    // Perpendicular
-
-    Vec2 perp = a.Perpendicular();
-
-    std::cout << "Perpendicular of A = ("
-              << perp.x << ", "
-              << perp.y << ")\n\n";
-
-    // Projection
-
-    Vec2 proj = a.Project(b);
-
-    std::cout << "Projection of A onto B = ("
-              << proj.x << ", "
-              << proj.y << ")\n\n";
-
-    // Reflection
-
-    Vec2 reflected = Vec2(1.0f, -1.0f).Reflect(Vec2(0.0f, 1.0f));
-
-    std::cout << "Reflection of (1,-1) about Y normal = ("
-              << reflected.x << ", "
-              << reflected.y << ")\n";
-
-    std::cout << "\n========================================\n";
-    std::cout << "Vec2 module demonstration completed.\n";
-    std::cout << "========================================\n";
-
+    std::cout << "\n=========================================================\n";
     return 0;
 }

@@ -1,0 +1,3 @@
+C:\msys64\mingw64\bin\cmake.exe -E rm -f CMakeFiles\Mat2Tests.dir/objects.a
+C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\Mat2Tests.dir/objects.a @CMakeFiles\Mat2Tests.dir\objects1.rsp
+C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Mat2Tests.dir/objects.a -Wl,--no-whole-archive -o Mat2Tests.exe -Wl,--out-implib,libMat2Tests.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Mat2Tests.dir\linkLibs.rsp
