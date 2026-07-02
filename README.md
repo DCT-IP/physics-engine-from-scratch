@@ -66,6 +66,19 @@ PhysicsEngine/
 └── README.md
 ```
 
+# Engine Architecutre
+
+The project is organized into independent modules
+```
+                Physics Engine
+                      │
+      ┌───────────────┼───────────────┐
+      │               │               │
+     Core         Physics        Renderer
+      │               │               │
+      ▼               ▼               ▼
+Math Library   Simulation       Visualization
+```
 ---
 
 ## Core
@@ -109,13 +122,19 @@ Rendering is intentionally separated from the physics simulation so that either 
 
 Small demonstration applications showcasing individual engine modules.
 
-Examples include:
+Current demonstrations:
 
-- Vector demonstrations
-- Matrix demonstrations
+- Vec2 operations
+- Mat2 operations
+- Math utility functions
+
+Planned demonstrations:
+
 - Particle simulation
-- Collision demonstrations
-- Rigid body simulation
+- Collision detection
+- Force generators
+- Numerical integration
+- Rigid body dynamics
 
 ---
 
@@ -123,8 +142,13 @@ Examples include:
 
 Unit tests used to verify the correctness of every engine module.
 
-Every public feature added to the engine is accompanied by corresponding tests before integration.
+Current test suites:
 
+- Vec2Tests
+- Mat2Tests
+- MathUtilsTests
+
+Every public feature added to the engine is accompanied by corresponding tests before integration.
 ---
 
 # Project Roadmap
@@ -133,6 +157,8 @@ Every public feature added to the engine is accompanied by corresponding tests b
 
 ## Milestone 1 — Core Mathematics
 
+### Mathematics' Utility
+- [x] MathUtils
 ### Vector Mathematics
 
 - [x] Vec2
@@ -141,7 +167,7 @@ Every public feature added to the engine is accompanied by corresponding tests b
 
 ### Matrix Mathematics
 
-- [ ] Mat2
+- [x] Mat2
 - [ ] Mat3
 - [ ] Mat4
 
@@ -302,12 +328,21 @@ Commit Changes
 Example:
 
 ```bash
-cmake --build Build
+cmake --build Build --target PhysicsEngineDemo
+
+cmake --build Build --target Vec2Tests
+
+cmake --build Build --target Mat2Tests
+
+cmake --build Build --target MathUtilsTests
 
 ./Build/PhysicsEngineDemo.exe
 
 ./Build/Vec2Tests.exe
-```
+
+./Build/Mat2Tests.exe
+
+./Build/MathUtilsTests.exe```
 
 > **Note:** Editing a source file does **not** automatically update the executable. The project must be rebuilt before running the latest changes.
 
