@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj.d"
   "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj"
   "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj.d"
+  "CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj"
+  "CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj.d"
   "CMakeFiles/Vec2Tests.dir/Tests/Vec2Tests.cpp.obj"
   "CMakeFiles/Vec2Tests.dir/Tests/Vec2Tests.cpp.obj.d"
   "Vec2Tests.exe"

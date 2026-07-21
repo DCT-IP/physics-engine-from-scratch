@@ -17,12 +17,14 @@ set(ENGINE_SOURCES
     Core/Math/Vec2.cpp
     Core/Math/Mat2.cpp
     Core/Math/MathUtils.cpp
+    Core/Math/Vec3.cpp
 )
 
 set(ENGINE_HEADERS
     Core/Math/Vec2.h
     Core/Math/Mat2.h
     Core/Math/MathUtils.h
+    Core/Math/Vec3.h
 )
 
 # ==========================================================
@@ -58,5 +60,10 @@ add_executable(Mat2Tests
 
 add_executable(MathUtilsTests
     Tests/MathUtilsTests.cpp
+    ${ENGINE_SOURCES}
+)
+
+add_executable(Vec3Tests
+    Tests/Vec3Tests.cpp
     ${ENGINE_SOURCES}
 )

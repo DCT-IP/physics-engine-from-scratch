@@ -3,12 +3,11 @@
 
 #include "Vec2.h"
 
+namespace Math {
 class Mat2 {
 public:
-    float m00;
-    float m01;
-    float m10;
-    float m11;
+    float m00, m01;
+    float m10, m11;
 
     // Constructors
     Mat2();
@@ -16,7 +15,7 @@ public:
 
     // Static Utilities
     static Mat2 Identity();
-    static Mat2 Zero(); // Added: Was missing from header
+    static Mat2 Zero();
 
     // Operator Overloads
     Mat2 operator+(const Mat2& other) const;
@@ -30,14 +29,14 @@ public:
     Mat2& operator/=(float scalar);
     
     Mat2 operator*(const Mat2& other) const;
-    Vec2 operator*(const Vec2& vector) const;
+    Vec2 operator*(const Vec2& vector) const; 
     
     bool operator==(const Mat2& other) const;
     bool operator!=(const Mat2& other) const;
 
     // Matrix Operations
     float Determinant() const;
-    float Trace() const; // Added: Was missing from header
+    float Trace() const;
     void Transpose();
     Mat2 Transposed() const;
     bool Invert();
@@ -47,5 +46,12 @@ public:
     bool IsIdentity() const;
     bool IsZero() const;
 };
+
+// Enables float * Mat2 syntax
+inline Mat2 operator*(float scalar, const Mat2& matrix) {
+    return matrix * scalar;
+}
+
+} // namespace Math
 
 #endif

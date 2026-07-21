@@ -1,5 +1,5 @@
 CMakeFiles/Mat2Tests.dir/Tests/Mat2Tests.cpp.obj: \
- C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Tests\Mat2Tests.cpp \
+ D:\GitHub_works\physics-engine-from-scratch\Tests\Mat2Tests.cpp \
  C:/msys64/mingw64/include/c++/15.2.0/cassert \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
@@ -161,5 +161,5 @@ CMakeFiles/Mat2Tests.dir/Tests/Mat2Tests.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/15.2.0/istream \
  C:/msys64/mingw64/include/c++/15.2.0/bits/istream.tcc \
- C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.h \
- C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Vec2.h
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat2.h \
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec2.h

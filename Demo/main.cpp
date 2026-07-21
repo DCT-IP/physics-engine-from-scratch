@@ -3,6 +3,8 @@
 #include "../Core/Math/Vec2.h"
 #include "../Core/Math/Mat2.h"
 #include "../Core/Math/MathUtils.h"
+#include "../Core/Math/Vec3.h"
+
 
 using namespace Math;
 int main()
@@ -131,5 +133,79 @@ std::cout << "IsFinite(42) = "
           << Math::IsFinite(42.0f)
           << '\n';
     std::cout << "\n=========================================================\n";
+
+    std::cout << "\n========== Vec3 Demo ==========\n\n";
+
+Vec3 a(1.0f, 2.0f, 3.0f);
+Vec3 b(4.0f, 5.0f, 6.0f);
+
+std::cout << "A = (" << a.x << ", " << a.y << ", " << a.z << ")\n";
+std::cout << "B = (" << b.x << ", " << b.y << ", " << b.z << ")\n\n";
+
+// Addition
+Vec3 add = a + b;
+std::cout << "A + B = ("
+          << add.x << ", "
+          << add.y << ", "
+          << add.z << ")\n";
+
+// Subtraction
+Vec3 sub = a - b;
+std::cout << "A - B = ("
+          << sub.x << ", "
+          << sub.y << ", "
+          << sub.z << ")\n";
+
+// Scalar Multiplication
+Vec3 mul = a * 2.0f;
+std::cout << "A * 2 = ("
+          << mul.x << ", "
+          << mul.y << ", "
+          << mul.z << ")\n";
+
+// Scalar Division
+Vec3 dived = a / 2.0f;
+std::cout << "A / 2 = ("
+          << dived.x << ", "
+          << dived.y << ", "
+          << dived.z << ")\n";
+
+// Length
+std::cout << "Length(A) = "
+          << a.Length()
+          << '\n';
+
+// Dot Product
+std::cout << "Dot(A, B) = "
+          << a.Dot(b)
+          << '\n';
+
+// Cross Product
+Vec3 cross = a.Cross(b);
+
+std::cout << "Cross(A, B) = ("
+          << cross.x << ", "
+          << cross.y << ", "
+          << cross.z << ")\n";
+
+// Distance
+std::cout << "Distance(A, B) = "
+          << a.Distance(b)
+          << '\n';
+
+// Normalize
+Vec3 norm = a.Normalized();
+
+std::cout << "Normalized A = ("
+          << norm.x << ", "
+          << norm.y << ", "
+          << norm.z << ")\n";
+
+// Zero Vector
+Vec3 zero;
+
+std::cout << "Zero Vector? "
+          << (zero.IsZero() ? "Yes" : "No")
+          << '\n';
     return 0;
 }

@@ -52,10 +52,10 @@ RM = C:\msys64\mingw64\bin\cmake.exe -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch
+CMAKE_SOURCE_DIR = D:\GitHub_works\physics-engine-from-scratch
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build
+CMAKE_BINARY_DIR = D:\GitHub_works\physics-engine-from-scratch\build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/MathUtilsTests.dir/depend.make
@@ -73,70 +73,86 @@ CMakeFiles/MathUtilsTests.dir/codegen:
 
 CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj: CMakeFiles/MathUtilsTests.dir/flags.make
 CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj: CMakeFiles/MathUtilsTests.dir/includes_CXX.rsp
-CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj: C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Tests/MathUtilsTests.cpp
+CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Tests/MathUtilsTests.cpp
 CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj: CMakeFiles/MathUtilsTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.obj -c C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Tests\MathUtilsTests.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Tests\MathUtilsTests.cpp
 
 CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Tests\MathUtilsTests.cpp > CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Tests\MathUtilsTests.cpp > CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.i
 
 CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Tests\MathUtilsTests.cpp -o CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Tests\MathUtilsTests.cpp -o CMakeFiles\MathUtilsTests.dir\Tests\MathUtilsTests.cpp.s
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj: CMakeFiles/MathUtilsTests.dir/flags.make
 CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj: CMakeFiles/MathUtilsTests.dir/includes_CXX.rsp
-CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj: C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Vec2.cpp
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec2.cpp
 CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj: CMakeFiles/MathUtilsTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.obj -c C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\Vec2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec2.cpp
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\Vec2.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec2.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.i
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\Vec2.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec2.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\Vec2.cpp.s
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj: CMakeFiles/MathUtilsTests.dir/flags.make
 CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj: CMakeFiles/MathUtilsTests.dir/includes_CXX.rsp
-CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj: C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/Mat2.cpp
+CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat2.cpp
 CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj: CMakeFiles/MathUtilsTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.obj -c C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\Mat2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat2.cpp
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\Mat2.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat2.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.i
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\Mat2.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat2.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\Mat2.cpp.s
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj: CMakeFiles/MathUtilsTests.dir/flags.make
 CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj: CMakeFiles/MathUtilsTests.dir/includes_CXX.rsp
-CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj: C:/Users/dheem/OneDrive/Desktop/physics-engine-from-scratch/Core/Math/MathUtils.cpp
+CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Core/Math/MathUtils.cpp
 CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj: CMakeFiles/MathUtilsTests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.obj -c C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\MathUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Core\Math\MathUtils.cpp
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\MathUtils.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.i
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Core\Math\MathUtils.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.i
 
 CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\MathUtils.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.s
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\MathUtils.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\MathUtils.cpp.s
+
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj: CMakeFiles/MathUtilsTests.dir/flags.make
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj: CMakeFiles/MathUtilsTests.dir/includes_CXX.rsp
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec3.cpp
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj: CMakeFiles/MathUtilsTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj -MF CMakeFiles\MathUtilsTests.dir\Core\Math\Vec3.cpp.obj.d -o CMakeFiles\MathUtilsTests.dir\Core\Math\Vec3.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec3.cpp
+
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec3.cpp > CMakeFiles\MathUtilsTests.dir\Core\Math\Vec3.cpp.i
+
+CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec3.cpp -o CMakeFiles\MathUtilsTests.dir\Core\Math\Vec3.cpp.s
 
 # Object files for target MathUtilsTests
 MathUtilsTests_OBJECTS = \
 "CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj" \
 "CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj" \
 "CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj" \
-"CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj"
+"CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj" \
+"CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj"
 
 # External object files for target MathUtilsTests
 MathUtilsTests_EXTERNAL_OBJECTS =
@@ -145,11 +161,12 @@ MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/Tests/MathUtilsTests.cpp.obj
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj
+MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/build.make
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/linkLibs.rsp
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/objects1.rsp
 MathUtilsTests.exe: CMakeFiles/MathUtilsTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable MathUtilsTests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable MathUtilsTests.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\MathUtilsTests.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -161,6 +178,6 @@ CMakeFiles/MathUtilsTests.dir/clean:
 .PHONY : CMakeFiles/MathUtilsTests.dir/clean
 
 CMakeFiles/MathUtilsTests.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\build\CMakeFiles\MathUtilsTests.dir\DependInfo.cmake "--color=$(COLOR)"
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\GitHub_works\physics-engine-from-scratch D:\GitHub_works\physics-engine-from-scratch D:\GitHub_works\physics-engine-from-scratch\build D:\GitHub_works\physics-engine-from-scratch\build D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles\MathUtilsTests.dir\DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/MathUtilsTests.dir/depend
 

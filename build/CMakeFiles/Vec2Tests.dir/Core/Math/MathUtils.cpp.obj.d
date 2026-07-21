@@ -1,6 +1,6 @@
 CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj: \
- C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\MathUtils.cpp \
- C:\Users\dheem\OneDrive\Desktop\physics-engine-from-scratch\Core\Math\MathUtils.h \
+ D:\GitHub_works\physics-engine-from-scratch\Core\Math\MathUtils.cpp \
+ D:\GitHub_works\physics-engine-from-scratch\Core\Math\MathUtils.h \
  C:/msys64/mingw64/include/c++/15.2.0/cmath \
  C:/msys64/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
  C:/msys64/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/c++config.h \

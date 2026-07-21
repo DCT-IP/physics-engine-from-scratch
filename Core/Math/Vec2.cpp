@@ -1,12 +1,12 @@
 #include "Vec2.h"
 #include "MathUtils.h"
-#include <cmath> // Required for sqrt
+#include <cmath>
 
-namespace Math{
+namespace Math {
+
 Vec2::Vec2() : x(0.0f), y(0.0f) {}
 
 Vec2::Vec2(float x, float y) : x(x), y(y) {}
-
 
 float Vec2::LengthSquared() const 
 {
@@ -18,34 +18,41 @@ float Vec2::Length() const
     return std::sqrt(LengthSquared());
 }
 
-
 void Vec2::Normalize() 
 {
-    float len = Length();
-    if(!Math::IsZero(len)) 
+    float lenSq = LengthSquared();
+    if (!Math::IsZero(lenSq)) 
     {
-        x /= len;
-        y /= len;
+        float invLen = 1.0f / std::sqrt(lenSq);
+        x *= invLen;
+        y *= invLen;
     }
 }
 
 Vec2 Vec2::Normalized() const 
 {
-    float len = Length();
-    if(!Math::IsZero(len)) 
+    float lenSq = LengthSquared();
+    if (!Math::IsZero(lenSq)) 
     {
-        return Vec2(x / len, y / len);
+        float invLen = 1.0f / std::sqrt(lenSq);
+        return Vec2(x * invLen, y * invLen);
     }
     return Vec2(0.0f, 0.0f);
 }
 
 bool Vec2::IsZero() const 
 {
-    return Math::IsZero(x) && Math::IsZero(y);}
+    return Math::IsZero(x) && Math::IsZero(y);
+}
 
 float Vec2::Dot(const Vec2& other) const 
 {
     return (x * other.x) + (y * other.y);
+}
+
+float Vec2::Cross(const Vec2& other) const
+{
+    return (x * other.y) - (y * other.x);
 }
 
 float Vec2::DistanceSquared(const Vec2& other) const 
@@ -73,7 +80,7 @@ Vec2 Vec2::Reflect(const Vec2& normal) const
 Vec2 Vec2::Project(const Vec2& other) const 
 {
     float lenSq = other.LengthSquared();
-    if(Math::IsZero(lenSq)) return Vec2(0.0f, 0.0f);
+    if (Math::IsZero(lenSq)) return Vec2(0.0f, 0.0f);
     
     float scalar = this->Dot(other) / lenSq;
     return other * scalar;
@@ -96,6 +103,7 @@ Vec2 Vec2::operator*(float scalar) const
 
 Vec2 Vec2::operator/(float scalar) const 
 {
+    if (Math::IsZero(scalar)) return Vec2(0.0f, 0.0f);
     float invScalar = 1.0f / scalar; 
     return Vec2(x * invScalar, y * invScalar);
 }
@@ -123,6 +131,11 @@ Vec2& Vec2::operator*=(float scalar)
 
 Vec2& Vec2::operator/=(float scalar) 
 {
+    if (Math::IsZero(scalar)) {
+        x = 0.0f;
+        y = 0.0f;
+        return *this;
+    }
     float invScalar = 1.0f / scalar;
     x *= invScalar;
     y *= invScalar;
@@ -134,7 +147,6 @@ Vec2 Vec2::operator-() const
     return Vec2(-x, -y);
 }
 
-
 bool Vec2::operator==(const Vec2& other) const 
 {
     return Math::NearlyEqual(x, other.x) && Math::NearlyEqual(y, other.y);
@@ -144,4 +156,5 @@ bool Vec2::operator!=(const Vec2& other) const
 {
     return !(*this == other);
 }
-};
+
+} // namespace Math
