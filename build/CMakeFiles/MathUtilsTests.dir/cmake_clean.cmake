@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj"
   "CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj.d"
+  "CMakeFiles/MathUtilsTests.dir/Core/Math/Mat3.cpp.obj"
+  "CMakeFiles/MathUtilsTests.dir/Core/Math/Mat3.cpp.obj.d"
   "CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj"
   "CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj.d"
   "CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj"

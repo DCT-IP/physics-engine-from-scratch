@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat2.cpp" "CMakeFiles/Vec3Tests.dir/Core/Math/Mat2.cpp.obj" "gcc" "CMakeFiles/Vec3Tests.dir/Core/Math/Mat2.cpp.obj.d"
+  "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat3.cpp" "CMakeFiles/Vec3Tests.dir/Core/Math/Mat3.cpp.obj" "gcc" "CMakeFiles/Vec3Tests.dir/Core/Math/Mat3.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/MathUtils.cpp" "CMakeFiles/Vec3Tests.dir/Core/Math/MathUtils.cpp.obj" "gcc" "CMakeFiles/Vec3Tests.dir/Core/Math/MathUtils.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec2.cpp" "CMakeFiles/Vec3Tests.dir/Core/Math/Vec2.cpp.obj" "gcc" "CMakeFiles/Vec3Tests.dir/Core/Math/Vec2.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec3.cpp" "CMakeFiles/Vec3Tests.dir/Core/Math/Vec3.cpp.obj" "gcc" "CMakeFiles/Vec3Tests.dir/Core/Math/Vec3.cpp.obj.d"

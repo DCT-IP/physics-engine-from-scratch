@@ -4,208 +4,210 @@
 #include "../Core/Math/Mat2.h"
 #include "../Core/Math/MathUtils.h"
 #include "../Core/Math/Vec3.h"
-
+#include "../Core/Math/Mat3.h"
 
 using namespace Math;
+
 int main()
 {
-    Mat2 A(1,2,
-           3,4);
+    // ==========================================
+    // Mat2 Demo
+    // ==========================================
+    std::cout << "\n======================== Mat2 Demo =============================\n";
 
-    Mat2 B(5,6,
-           7,8);
-    std::cout << "\n========================demo=============================\n";
+    Mat2 mat2A(1.0f, 2.0f,
+               3.0f, 4.0f);
+
+    Mat2 mat2B(5.0f, 6.0f,
+               7.0f, 8.0f);
+
     std::cout << "Matrix A\n";
-    std::cout << A.m00 << " " << A.m01 << "\n";
-    std::cout << A.m10 << " " << A.m11 << "\n\n";
+    std::cout << mat2A.m00 << " " << mat2A.m01 << "\n";
+    std::cout << mat2A.m10 << " " << mat2A.m11 << "\n\n";
 
     std::cout << "Matrix B\n";
-    std::cout << B.m00 << " " << B.m01 << "\n";
-    std::cout << B.m10 << " " << B.m11 << "\n\n";
+    std::cout << mat2B.m00 << " " << mat2B.m01 << "\n";
+    std::cout << mat2B.m10 << " " << mat2B.m11 << "\n\n";
 
-    Mat2 C = A + B;
-
+    Mat2 mat2C = mat2A + mat2B;
     std::cout << "A + B\n";
-    std::cout << C.m00 << " " << C.m01 << "\n";
-    std::cout << C.m10 << " " << C.m11 << "\n\n";
+    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
+    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
 
-    C = A - B;
-
+    mat2C = mat2A - mat2B;
     std::cout << "A - B\n";
-    std::cout << C.m00 << " " << C.m01 << "\n";
-    std::cout << C.m10 << " " << C.m11 << "\n\n";
+    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
+    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
 
-    C = A * 2.0f;
-
+    mat2C = mat2A * 2.0f;
     std::cout << "A * 2\n";
-    std::cout << C.m00 << " " << C.m01 << "\n";
-    std::cout << C.m10 << " " << C.m11 << "\n\n";
+    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
+    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
 
-    C = A * B;
-
+    mat2C = mat2A * mat2B;
     std::cout << "A * B\n";
-    std::cout << C.m00 << " " << C.m01 << "\n";
-    std::cout << C.m10 << " " << C.m11 << "\n\n";
+    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
+    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
 
-    Vec2 v(2,3);
+    Vec2 v2(2.0f, 3.0f);
+    Vec2 vec2Result = mat2A * v2;
+    std::cout << "A * Vec2 = (" << vec2Result.x << ", " << vec2Result.y << ")\n\n";
 
-    Vec2 r = A * v;
+    std::cout << "Determinant = " << mat2A.Determinant() << "\n\n";
+    std::cout << "Trace = " << mat2A.Trace() << "\n\n";
 
-    std::cout << "A * Vec2 = ("
-              << r.x << ", "
-              << r.y << ")\n\n";
-
-    std::cout << "Determinant = "
-              << A.Determinant()
-              << "\n\n";
-
-    std::cout << "Trace = "
-              << A.Trace()
-              << "\n\n";
-
-    C = A.Transposed();
-
+    mat2C = mat2A.Transposed();
     std::cout << "Transpose\n";
-    std::cout << C.m00 << " " << C.m01 << "\n";
-    std::cout << C.m10 << " " << C.m11 << "\n\n";
+    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
+    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
 
-    C = A.Inverse();
-
+    mat2C = mat2A.Inverse();
     std::cout << "Inverse\n";
-    std::cout << C.m00 << " " << C.m01 << "\n";
-    std::cout << C.m10 << " " << C.m11 << "\n";
+    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
+    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n";
 
+    // ==========================================
+    // MathUtils Demo
+    // ==========================================
     std::cout << "\n========== MathUtils Demo ==========\n\n";
 
-std::cout << "PI = " << Math::PI << '\n';
-std::cout << "TWO_PI = " << Math::TWO_PI << '\n';
-std::cout << "HALF_PI = " << Math::HALF_PI << "\n\n";
+    std::cout << "PI = " << Math::PI << '\n';
+    std::cout << "TWO_PI = " << Math::TWO_PI << '\n';
+    std::cout << "HALF_PI = " << Math::HALF_PI << "\n\n";
 
-std::cout << "Clamp(15, 0, 10) = "
-          << Math::Clamp(15.0f, 0.0f, 10.0f)
-          << '\n';
+    std::cout << "Clamp(15, 0, 10) = " << Math::Clamp(15.0f, 0.0f, 10.0f) << '\n';
+    std::cout << "Lerp(0, 100, 0.25) = " << Math::Lerp(0.0f, 100.0f, 0.25f) << '\n';
+    std::cout << "Min(3, 7) = " << Math::Min(3.0f, 7.0f) << '\n';
+    std::cout << "Max(3, 7) = " << Math::Max(3.0f, 7.0f) << '\n';
+    std::cout << "Abs(-42) = " << Math::Abs(-42.0f) << '\n';
+    std::cout << "Sign(-10) = " << Math::Sign(-10.0f) << '\n';
+    std::cout << "90 Degrees = " << Math::DegreesToRadians(90.0f) << " radians\n";
+    std::cout << "PI Radians = " << Math::RadiansToDegrees(Math::PI) << " degrees\n";
+    std::cout << "Square(6) = " << Math::Square(6.0f) << '\n';
+    std::cout << "Cube(4) = " << Math::Cube(4.0f) << '\n';
+    std::cout << "NearlyEqual(1.0, 1.0000001) = " << Math::NearlyEqual(1.0f, 1.0000001f) << '\n';
+    std::cout << "IsZero(0.00000001) = " << Math::IsZero(0.00000001f) << '\n';
+    std::cout << "IsFinite(42) = " << Math::IsFinite(42.0f) << '\n';
 
-std::cout << "Lerp(0, 100, 0.25) = "
-          << Math::Lerp(0.0f, 100.0f, 0.25f)
-          << '\n';
-
-std::cout << "Min(3, 7) = "
-          << Math::Min(3.0f, 7.0f)
-          << '\n';
-
-std::cout << "Max(3, 7) = "
-          << Math::Max(3.0f, 7.0f)
-          << '\n';
-
-std::cout << "Abs(-42) = "
-          << Math::Abs(-42.0f)
-          << '\n';
-
-std::cout << "Sign(-10) = "
-          << Math::Sign(-10.0f)
-          << '\n';
-
-std::cout << "90 Degrees = "
-          << Math::DegreesToRadians(90.0f)
-          << " radians\n";
-
-std::cout << "PI Radians = "
-          << Math::RadiansToDegrees(Math::PI)
-          << " degrees\n";
-
-std::cout << "Square(6) = "
-          << Math::Square(6.0f)
-          << '\n';
-
-std::cout << "Cube(4) = "
-          << Math::Cube(4.0f)
-          << '\n';
-
-std::cout << "NearlyEqual(1.0, 1.0000001) = "
-          << Math::NearlyEqual(1.0f, 1.0000001f)
-          << '\n';
-
-std::cout << "IsZero(0.00000001) = "
-          << Math::IsZero(0.00000001f)
-          << '\n';
-
-std::cout << "IsFinite(42) = "
-          << Math::IsFinite(42.0f)
-          << '\n';
-    std::cout << "\n=========================================================\n";
-
+    // ==========================================
+    // Vec3 Demo
+    // ==========================================
     std::cout << "\n========== Vec3 Demo ==========\n\n";
 
-Vec3 a(1.0f, 2.0f, 3.0f);
-Vec3 b(4.0f, 5.0f, 6.0f);
+    Vec3 vec3A(1.0f, 2.0f, 3.0f);
+    Vec3 vec3B(4.0f, 5.0f, 6.0f);
 
-std::cout << "A = (" << a.x << ", " << a.y << ", " << a.z << ")\n";
-std::cout << "B = (" << b.x << ", " << b.y << ", " << b.z << ")\n\n";
+    std::cout << "A = (" << vec3A.x << ", " << vec3A.y << ", " << vec3A.z << ")\n";
+    std::cout << "B = (" << vec3B.x << ", " << vec3B.y << ", " << vec3B.z << ")\n\n";
 
-// Addition
-Vec3 add = a + b;
-std::cout << "A + B = ("
-          << add.x << ", "
-          << add.y << ", "
-          << add.z << ")\n";
+    Vec3 vec3Add = vec3A + vec3B;
+    std::cout << "A + B = (" << vec3Add.x << ", " << vec3Add.y << ", " << vec3Add.z << ")\n";
 
-// Subtraction
-Vec3 sub = a - b;
-std::cout << "A - B = ("
-          << sub.x << ", "
-          << sub.y << ", "
-          << sub.z << ")\n";
+    Vec3 vec3Sub = vec3A - vec3B;
+    std::cout << "A - B = (" << vec3Sub.x << ", " << vec3Sub.y << ", " << vec3Sub.z << ")\n";
 
-// Scalar Multiplication
-Vec3 mul = a * 2.0f;
-std::cout << "A * 2 = ("
-          << mul.x << ", "
-          << mul.y << ", "
-          << mul.z << ")\n";
+    Vec3 vec3Mul = vec3A * 2.0f;
+    std::cout << "A * 2 = (" << vec3Mul.x << ", " << vec3Mul.y << ", " << vec3Mul.z << ")\n";
 
-// Scalar Division
-Vec3 dived = a / 2.0f;
-std::cout << "A / 2 = ("
-          << dived.x << ", "
-          << dived.y << ", "
-          << dived.z << ")\n";
+    Vec3 vec3Div = vec3A / 2.0f;
+    std::cout << "A / 2 = (" << vec3Div.x << ", " << vec3Div.y << ", " << vec3Div.z << ")\n";
 
-// Length
-std::cout << "Length(A) = "
-          << a.Length()
-          << '\n';
+    std::cout << "Length(A) = " << vec3A.Length() << '\n';
+    std::cout << "Dot(A, B) = " << vec3A.Dot(vec3B) << '\n';
 
-// Dot Product
-std::cout << "Dot(A, B) = "
-          << a.Dot(b)
-          << '\n';
+    Vec3 vec3Cross = vec3A.Cross(vec3B);
+    std::cout << "Cross(A, B) = (" << vec3Cross.x << ", " << vec3Cross.y << ", " << vec3Cross.z << ")\n";
 
-// Cross Product
-Vec3 cross = a.Cross(b);
+    std::cout << "Distance(A, B) = " << vec3A.Distance(vec3B) << '\n';
 
-std::cout << "Cross(A, B) = ("
-          << cross.x << ", "
-          << cross.y << ", "
-          << cross.z << ")\n";
+    Vec3 vec3Norm = vec3A.Normalized();
+    std::cout << "Normalized A = (" << vec3Norm.x << ", " << vec3Norm.y << ", " << vec3Norm.z << ")\n";
 
-// Distance
-std::cout << "Distance(A, B) = "
-          << a.Distance(b)
-          << '\n';
+    Vec3 vec3Zero;
+    std::cout << "Zero Vector? " << (vec3Zero.IsZero() ? "Yes" : "No") << '\n';
 
-// Normalize
-Vec3 norm = a.Normalized();
+    // ==========================================
+    // Mat3 Demo
+    // ==========================================
+    std::cout << "\n========== Mat3 Demo ==========\n\n";
 
-std::cout << "Normalized A = ("
-          << norm.x << ", "
-          << norm.y << ", "
-          << norm.z << ")\n";
+    Mat3 mat3A(1, 2, 3,
+               4, 5, 6,
+               7, 8, 10);
 
-// Zero Vector
-Vec3 zero;
+    Mat3 mat3B(9, 8, 7,
+               6, 5, 4,
+               3, 2, 1);
 
-std::cout << "Zero Vector? "
-          << (zero.IsZero() ? "Yes" : "No")
-          << '\n';
+    std::cout << "Matrix A:\n";
+    std::cout << mat3A.m00 << " " << mat3A.m01 << " " << mat3A.m02 << "\n";
+    std::cout << mat3A.m10 << " " << mat3A.m11 << " " << mat3A.m12 << "\n";
+    std::cout << mat3A.m20 << " " << mat3A.m21 << " " << mat3A.m22 << "\n\n";
+
+    std::cout << "Matrix B:\n";
+    std::cout << mat3B.m00 << " " << mat3B.m01 << " " << mat3B.m02 << "\n";
+    std::cout << mat3B.m10 << " " << mat3B.m11 << " " << mat3B.m12 << "\n";
+    std::cout << mat3B.m20 << " " << mat3B.m21 << " " << mat3B.m22 << "\n\n";
+
+    Mat3 mat3D = mat3A + mat3B;
+    std::cout << "A + B:\n";
+    std::cout << mat3D.m00 << " " << mat3D.m01 << " " << mat3D.m02 << "\n";
+    std::cout << mat3D.m10 << " " << mat3D.m11 << " " << mat3D.m12 << "\n";
+    std::cout << mat3D.m20 << " " << mat3D.m21 << " " << mat3D.m22 << "\n\n";
+
+    Mat3 mat3E = mat3A - mat3B;
+    std::cout << "A - B:\n";
+    std::cout << mat3E.m00 << " " << mat3E.m01 << " " << mat3E.m02 << "\n";
+    std::cout << mat3E.m10 << " " << mat3E.m11 << " " << mat3E.m12 << "\n";
+    std::cout << mat3E.m20 << " " << mat3E.m21 << " " << mat3E.m22 << "\n\n";
+
+    Mat3 mat3F = mat3A * 2.0f;
+    std::cout << "A * 2.0:\n";
+    std::cout << mat3F.m00 << " " << mat3F.m01 << " " << mat3F.m02 << "\n";
+    std::cout << mat3F.m10 << " " << mat3F.m11 << " " << mat3F.m12 << "\n";
+    std::cout << mat3F.m20 << " " << mat3F.m21 << " " << mat3F.m22 << "\n\n";
+
+    Mat3 mat3G = mat3A * mat3B;
+    std::cout << "A * B:\n";
+    std::cout << mat3G.m00 << " " << mat3G.m01 << " " << mat3G.m02 << "\n";
+    std::cout << mat3G.m10 << " " << mat3G.m11 << " " << mat3G.m12 << "\n";
+    std::cout << mat3G.m20 << " " << mat3G.m21 << " " << mat3G.m22 << "\n\n";
+
+    Vec3 v3(1.0f, 2.0f, 3.0f);
+    Vec3 vec3Result = mat3A * v3;
+    std::cout << "A * Vec3 = (" << vec3Result.x << ", " << vec3Result.y << ", " << vec3Result.z << ")\n\n";
+
+    std::cout << "Determinant(A) = " << mat3A.Determinant() << "\n";
+    std::cout << "Trace(A) = " << mat3A.Trace() << "\n\n";
+
+    Mat3 mat3H = mat3A.Transposed();
+    std::cout << "Transpose(A):\n";
+    std::cout << mat3H.m00 << " " << mat3H.m01 << " " << mat3H.m02 << "\n";
+    std::cout << mat3H.m10 << " " << mat3H.m11 << " " << mat3H.m12 << "\n";
+    std::cout << mat3H.m20 << " " << mat3H.m21 << " " << mat3H.m22 << "\n\n";
+
+    Mat3 mat3I = mat3A.Inverse();
+    std::cout << "Inverse(A):\n";
+    std::cout << mat3I.m00 << " " << mat3I.m01 << " " << mat3I.m02 << "\n";
+    std::cout << mat3I.m10 << " " << mat3I.m11 << " " << mat3I.m12 << "\n";
+    std::cout << mat3I.m20 << " " << mat3I.m21 << " " << mat3I.m22 << "\n\n";
+
+    std::cout << "Is Identity? " << (mat3A.IsIdentity() ? "Yes" : "No") << "\n";
+    std::cout << "Is Zero? " << (mat3A.IsZero() ? "Yes" : "No") << "\n\n";
+
+    Mat3 rot = Mat3::Rotation(Math::HALF_PI);
+    Mat3 scale = Mat3::Scale(2.0f, 3.0f);
+    Mat3 trans = Mat3::Translation(5.0f, -2.0f);
+
+    Vec3 point2D(1.0f, 0.0f, 1.0f);
+    Vec3 translatedPoint = trans * point2D;
+
+    std::cout << "Translation (5, -2) of (1, 0, 1) = (" 
+              << translatedPoint.x << ", " 
+              << translatedPoint.y << ", " 
+              << translatedPoint.z << ")\n";
+
+    std::cout << "=========================================================\n";
+
     return 0;
 }
