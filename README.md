@@ -70,14 +70,22 @@ PhysicsEngine/
 
 The project is organized into independent modules
 ```
-                Physics Engine
-                      │
-      ┌───────────────┼───────────────┐
-      │               │               │
-     Core         Physics        Renderer
-      │               │               │
-      ▼               ▼               ▼
-Math Library   Simulation       Visualization
+                     Physics Engine
+                           │
+     ┌─────────────────────┼─────────────────────┐
+     │                     │                     │
+    Core               Physics             Renderer
+     │
+     ├── Math
+     │     ├── MathUtils
+     │     ├── Vec2
+     │     ├── Vec3
+     │     ├── Vec4
+     │     ├── Mat2
+     │     ├── Mat3
+     │     └── Mat4
+     │
+     └── Utilities
 ```
 ---
 
@@ -122,18 +130,25 @@ Rendering is intentionally separated from the physics simulation so that either 
 
 Small demonstration applications showcasing individual engine modules.
 
-Current demonstrations:
+Implemented demonstrations:
 
-- Vec2 operations
-- Mat2 operations
 - Math utility functions
+- Vec2
+- Vec3
+- Vec4
+- Mat2
+- Mat3
+- Mat4
 
 Planned demonstrations:
 
+- Transform2D
+- Transform3D
+- Quaternion
 - Particle simulation
-- Collision detection
 - Force generators
 - Numerical integration
+- Collision detection
 - Rigid body dynamics
 
 ---
@@ -142,11 +157,15 @@ Planned demonstrations:
 
 Unit tests used to verify the correctness of every engine module.
 
-Current test suites:
+Implemented test suites:
 
-- Vec2Tests
-- Mat2Tests
 - MathUtilsTests
+- Vec2Tests
+- Vec3Tests
+- Vec4Tests
+- Mat2Tests
+- Mat3Tests
+- Mat4Tests
 
 Every public feature added to the engine is accompanied by corresponding tests before integration.
 ---
@@ -158,7 +177,9 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ## Milestone 1 — Core Mathematics
 
 ### Mathematics' Utility
+
 - [x] MathUtils
+
 ### Vector Mathematics
 
 - [x] Vec2
@@ -233,7 +254,7 @@ Every public feature added to the engine is accompanied by corresponding tests b
 
 # Technologies
 
-Current:
+Implemented :
 
 - Modern C++17
 - CMake
@@ -266,24 +287,21 @@ cmake -S . -B Build -G "MinGW Makefiles"
 
 ## Build
 
-Build the entire project:
-
-```bash
-cmake --build Build
-```
-
-Build only the demo:
+Build individual modules:
 
 ```bash
 cmake --build Build --target PhysicsEngineDemo
-```
 
-Build only the tests:
+cmake --build Build --target MathUtilsTests
 
-```bash
 cmake --build Build --target Vec2Tests
-```
+cmake --build Build --target Vec3Tests
+cmake --build Build --target Vec4Tests
 
+cmake --build Build --target Mat2Tests
+cmake --build Build --target Mat3Tests
+cmake --build Build --target Mat4Tests
+```
 ---
 
 ## Run
@@ -298,6 +316,12 @@ Run the test suite:
 
 ```bash
 ./Build/Vec2Tests.exe
+./Build/Vec3Tests.exe
+./Build/Vec4Tests.exe
+
+./Build/Mat2Tests.exe
+./Build/Mat3Tests.exe
+./Build/Mat4Tests.e
 ```
 
 ---
@@ -342,7 +366,8 @@ cmake --build Build --target MathUtilsTests
 
 ./Build/Mat2Tests.exe
 
-./Build/MathUtilsTests.exe```
+./Build/MathUtilsTests.exe
+```
 
 > **Note:** Editing a source file does **not** automatically update the executable. The project must be rebuilt before running the latest changes.
 
