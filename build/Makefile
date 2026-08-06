@@ -193,6 +193,32 @@ Vec3Tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/build
 .PHONY : Vec3Tests/fast
 
+#=============================================================================
+# Target rules for targets named Vec4Tests
+
+# Build rule for target.
+Vec4Tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Vec4Tests
+.PHONY : Vec4Tests
+
+# fast build rule for target.
+Vec4Tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/build
+.PHONY : Vec4Tests/fast
+
+#=============================================================================
+# Target rules for targets named Mat4Tests
+
+# Build rule for target.
+Mat4Tests: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Mat4Tests
+.PHONY : Mat4Tests
+
+# fast build rule for target.
+Mat4Tests/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/build
+.PHONY : Mat4Tests/fast
+
 Core/Math/Mat2.obj: Core/Math/Mat2.cpp.obj
 .PHONY : Core/Math/Mat2.obj
 
@@ -204,6 +230,8 @@ Core/Math/Mat2.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat2.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat2.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat2.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat2.cpp.obj
 .PHONY : Core/Math/Mat2.cpp.obj
 
 Core/Math/Mat2.i: Core/Math/Mat2.cpp.i
@@ -217,6 +245,8 @@ Core/Math/Mat2.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat2.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat2.cpp.i
 .PHONY : Core/Math/Mat2.cpp.i
 
 Core/Math/Mat2.s: Core/Math/Mat2.cpp.s
@@ -230,6 +260,8 @@ Core/Math/Mat2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat2.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat2.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat2.cpp.s
 .PHONY : Core/Math/Mat2.cpp.s
 
 Core/Math/Mat3.obj: Core/Math/Mat3.cpp.obj
@@ -243,6 +275,8 @@ Core/Math/Mat3.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat3.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat3.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat3.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat3.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat3.cpp.obj
 .PHONY : Core/Math/Mat3.cpp.obj
 
 Core/Math/Mat3.i: Core/Math/Mat3.cpp.i
@@ -256,6 +290,8 @@ Core/Math/Mat3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat3.cpp.i
 .PHONY : Core/Math/Mat3.cpp.i
 
 Core/Math/Mat3.s: Core/Math/Mat3.cpp.s
@@ -269,7 +305,54 @@ Core/Math/Mat3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat3.cpp.s
 .PHONY : Core/Math/Mat3.cpp.s
+
+Core/Math/Mat4.obj: Core/Math/Mat4.cpp.obj
+.PHONY : Core/Math/Mat4.obj
+
+# target to build an object file
+Core/Math/Mat4.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat4.cpp.obj
+.PHONY : Core/Math/Mat4.cpp.obj
+
+Core/Math/Mat4.i: Core/Math/Mat4.cpp.i
+.PHONY : Core/Math/Mat4.i
+
+# target to preprocess a source file
+Core/Math/Mat4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat4.cpp.i
+.PHONY : Core/Math/Mat4.cpp.i
+
+Core/Math/Mat4.s: Core/Math/Mat4.cpp.s
+.PHONY : Core/Math/Mat4.s
+
+# target to generate assembly for a file
+Core/Math/Mat4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Mat4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Mat4.cpp.s
+.PHONY : Core/Math/Mat4.cpp.s
 
 Core/Math/MathUtils.obj: Core/Math/MathUtils.cpp.obj
 .PHONY : Core/Math/MathUtils.obj
@@ -282,6 +365,8 @@ Core/Math/MathUtils.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/MathUtils.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/MathUtils.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/MathUtils.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/MathUtils.cpp.obj
 .PHONY : Core/Math/MathUtils.cpp.obj
 
 Core/Math/MathUtils.i: Core/Math/MathUtils.cpp.i
@@ -295,6 +380,8 @@ Core/Math/MathUtils.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/MathUtils.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/MathUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/MathUtils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/MathUtils.cpp.i
 .PHONY : Core/Math/MathUtils.cpp.i
 
 Core/Math/MathUtils.s: Core/Math/MathUtils.cpp.s
@@ -308,6 +395,8 @@ Core/Math/MathUtils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/MathUtils.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/MathUtils.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/MathUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/MathUtils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/MathUtils.cpp.s
 .PHONY : Core/Math/MathUtils.cpp.s
 
 Core/Math/Vec2.obj: Core/Math/Vec2.cpp.obj
@@ -321,6 +410,8 @@ Core/Math/Vec2.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec2.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec2.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec2.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec2.cpp.obj
 .PHONY : Core/Math/Vec2.cpp.obj
 
 Core/Math/Vec2.i: Core/Math/Vec2.cpp.i
@@ -334,6 +425,8 @@ Core/Math/Vec2.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec2.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec2.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec2.cpp.i
 .PHONY : Core/Math/Vec2.cpp.i
 
 Core/Math/Vec2.s: Core/Math/Vec2.cpp.s
@@ -347,6 +440,8 @@ Core/Math/Vec2.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec2.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec2.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec2.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec2.cpp.s
 .PHONY : Core/Math/Vec2.cpp.s
 
 Core/Math/Vec3.obj: Core/Math/Vec3.cpp.obj
@@ -360,6 +455,8 @@ Core/Math/Vec3.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec3.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec3.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec3.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec3.cpp.obj
 .PHONY : Core/Math/Vec3.cpp.obj
 
 Core/Math/Vec3.i: Core/Math/Vec3.cpp.i
@@ -373,6 +470,8 @@ Core/Math/Vec3.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec3.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec3.cpp.i
 .PHONY : Core/Math/Vec3.cpp.i
 
 Core/Math/Vec3.s: Core/Math/Vec3.cpp.s
@@ -386,7 +485,54 @@ Core/Math/Vec3.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec3.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec3.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec3.cpp.s
 .PHONY : Core/Math/Vec3.cpp.s
+
+Core/Math/Vec4.obj: Core/Math/Vec4.cpp.obj
+.PHONY : Core/Math/Vec4.obj
+
+# target to build an object file
+Core/Math/Vec4.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec4.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec4.cpp.obj
+.PHONY : Core/Math/Vec4.cpp.obj
+
+Core/Math/Vec4.i: Core/Math/Vec4.cpp.i
+.PHONY : Core/Math/Vec4.i
+
+# target to preprocess a source file
+Core/Math/Vec4.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec4.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec4.cpp.i
+.PHONY : Core/Math/Vec4.cpp.i
+
+Core/Math/Vec4.s: Core/Math/Vec4.cpp.s
+.PHONY : Core/Math/Vec4.s
+
+# target to generate assembly for a file
+Core/Math/Vec4.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\PhysicsEngineDemo.dir\build.make CMakeFiles/PhysicsEngineDemo.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec2Tests.dir\build.make CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat2Tests.dir\build.make CMakeFiles/Mat2Tests.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\MathUtilsTests.dir\build.make CMakeFiles/MathUtilsTests.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Core/Math/Vec4.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Core/Math/Vec4.cpp.s
+.PHONY : Core/Math/Vec4.cpp.s
 
 Demo/main.obj: Demo/main.cpp.obj
 .PHONY : Demo/main.obj
@@ -460,6 +606,30 @@ Tests/Mat3Tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat3Tests.dir\build.make CMakeFiles/Mat3Tests.dir/Tests/Mat3Tests.cpp.s
 .PHONY : Tests/Mat3Tests.cpp.s
 
+Tests/Mat4Tests.obj: Tests/Mat4Tests.cpp.obj
+.PHONY : Tests/Mat4Tests.obj
+
+# target to build an object file
+Tests/Mat4Tests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Tests/Mat4Tests.cpp.obj
+.PHONY : Tests/Mat4Tests.cpp.obj
+
+Tests/Mat4Tests.i: Tests/Mat4Tests.cpp.i
+.PHONY : Tests/Mat4Tests.i
+
+# target to preprocess a source file
+Tests/Mat4Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Tests/Mat4Tests.cpp.i
+.PHONY : Tests/Mat4Tests.cpp.i
+
+Tests/Mat4Tests.s: Tests/Mat4Tests.cpp.s
+.PHONY : Tests/Mat4Tests.s
+
+# target to generate assembly for a file
+Tests/Mat4Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Mat4Tests.dir\build.make CMakeFiles/Mat4Tests.dir/Tests/Mat4Tests.cpp.s
+.PHONY : Tests/Mat4Tests.cpp.s
+
 Tests/MathUtilsTests.obj: Tests/MathUtilsTests.cpp.obj
 .PHONY : Tests/MathUtilsTests.obj
 
@@ -532,6 +702,30 @@ Tests/Vec3Tests.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec3Tests.dir\build.make CMakeFiles/Vec3Tests.dir/Tests/Vec3Tests.cpp.s
 .PHONY : Tests/Vec3Tests.cpp.s
 
+Tests/Vec4Tests.obj: Tests/Vec4Tests.cpp.obj
+.PHONY : Tests/Vec4Tests.obj
+
+# target to build an object file
+Tests/Vec4Tests.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Tests/Vec4Tests.cpp.obj
+.PHONY : Tests/Vec4Tests.cpp.obj
+
+Tests/Vec4Tests.i: Tests/Vec4Tests.cpp.i
+.PHONY : Tests/Vec4Tests.i
+
+# target to preprocess a source file
+Tests/Vec4Tests.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Tests/Vec4Tests.cpp.i
+.PHONY : Tests/Vec4Tests.cpp.i
+
+Tests/Vec4Tests.s: Tests/Vec4Tests.cpp.s
+.PHONY : Tests/Vec4Tests.s
+
+# target to generate assembly for a file
+Tests/Vec4Tests.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Vec4Tests.dir\build.make CMakeFiles/Vec4Tests.dir/Tests/Vec4Tests.cpp.s
+.PHONY : Tests/Vec4Tests.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -542,16 +736,21 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Mat2Tests
 	@echo ... Mat3Tests
+	@echo ... Mat4Tests
 	@echo ... MathUtilsTests
 	@echo ... PhysicsEngineDemo
 	@echo ... Vec2Tests
 	@echo ... Vec3Tests
+	@echo ... Vec4Tests
 	@echo ... Core/Math/Mat2.obj
 	@echo ... Core/Math/Mat2.i
 	@echo ... Core/Math/Mat2.s
 	@echo ... Core/Math/Mat3.obj
 	@echo ... Core/Math/Mat3.i
 	@echo ... Core/Math/Mat3.s
+	@echo ... Core/Math/Mat4.obj
+	@echo ... Core/Math/Mat4.i
+	@echo ... Core/Math/Mat4.s
 	@echo ... Core/Math/MathUtils.obj
 	@echo ... Core/Math/MathUtils.i
 	@echo ... Core/Math/MathUtils.s
@@ -561,6 +760,9 @@ help:
 	@echo ... Core/Math/Vec3.obj
 	@echo ... Core/Math/Vec3.i
 	@echo ... Core/Math/Vec3.s
+	@echo ... Core/Math/Vec4.obj
+	@echo ... Core/Math/Vec4.i
+	@echo ... Core/Math/Vec4.s
 	@echo ... Demo/main.obj
 	@echo ... Demo/main.i
 	@echo ... Demo/main.s
@@ -570,6 +772,9 @@ help:
 	@echo ... Tests/Mat3Tests.obj
 	@echo ... Tests/Mat3Tests.i
 	@echo ... Tests/Mat3Tests.s
+	@echo ... Tests/Mat4Tests.obj
+	@echo ... Tests/Mat4Tests.i
+	@echo ... Tests/Mat4Tests.s
 	@echo ... Tests/MathUtilsTests.obj
 	@echo ... Tests/MathUtilsTests.i
 	@echo ... Tests/MathUtilsTests.s
@@ -579,6 +784,9 @@ help:
 	@echo ... Tests/Vec3Tests.obj
 	@echo ... Tests/Vec3Tests.i
 	@echo ... Tests/Vec3Tests.s
+	@echo ... Tests/Vec4Tests.obj
+	@echo ... Tests/Vec4Tests.i
+	@echo ... Tests/Vec4Tests.s
 .PHONY : help
 
 

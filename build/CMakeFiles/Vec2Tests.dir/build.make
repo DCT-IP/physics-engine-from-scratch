@@ -161,6 +161,36 @@ CMakeFiles/Vec2Tests.dir/Core/Math/Mat3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vec2Tests.dir/Core/Math/Mat3.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat3.cpp -o CMakeFiles\Vec2Tests.dir\Core\Math\Mat3.cpp.s
 
+CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj: CMakeFiles/Vec2Tests.dir/flags.make
+CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj: CMakeFiles/Vec2Tests.dir/includes_CXX.rsp
+CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec4.cpp
+CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj: CMakeFiles/Vec2Tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj -MF CMakeFiles\Vec2Tests.dir\Core\Math\Vec4.cpp.obj.d -o CMakeFiles\Vec2Tests.dir\Core\Math\Vec4.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec4.cpp
+
+CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec4.cpp > CMakeFiles\Vec2Tests.dir\Core\Math\Vec4.cpp.i
+
+CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\Vec4.cpp -o CMakeFiles\Vec2Tests.dir\Core\Math\Vec4.cpp.s
+
+CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj: CMakeFiles/Vec2Tests.dir/flags.make
+CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj: CMakeFiles/Vec2Tests.dir/includes_CXX.rsp
+CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj: D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat4.cpp
+CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj: CMakeFiles/Vec2Tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj -MF CMakeFiles\Vec2Tests.dir\Core\Math\Mat4.cpp.obj.d -o CMakeFiles\Vec2Tests.dir\Core\Math\Mat4.cpp.obj -c D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat4.cpp
+
+CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat4.cpp > CMakeFiles\Vec2Tests.dir\Core\Math\Mat4.cpp.i
+
+CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub_works\physics-engine-from-scratch\Core\Math\Mat4.cpp -o CMakeFiles\Vec2Tests.dir\Core\Math\Mat4.cpp.s
+
 # Object files for target Vec2Tests
 Vec2Tests_OBJECTS = \
 "CMakeFiles/Vec2Tests.dir/Tests/Vec2Tests.cpp.obj" \
@@ -168,7 +198,9 @@ Vec2Tests_OBJECTS = \
 "CMakeFiles/Vec2Tests.dir/Core/Math/Mat2.cpp.obj" \
 "CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj" \
 "CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj" \
-"CMakeFiles/Vec2Tests.dir/Core/Math/Mat3.cpp.obj"
+"CMakeFiles/Vec2Tests.dir/Core/Math/Mat3.cpp.obj" \
+"CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj" \
+"CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj"
 
 # External object files for target Vec2Tests
 Vec2Tests_EXTERNAL_OBJECTS =
@@ -179,11 +211,13 @@ Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/Core/Math/Mat2.cpp.obj
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/Core/Math/Mat3.cpp.obj
+Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj
+Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/build.make
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/linkLibs.rsp
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/objects1.rsp
 Vec2Tests.exe: CMakeFiles/Vec2Tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable Vec2Tests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\GitHub_works\physics-engine-from-scratch\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Vec2Tests.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Vec2Tests.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

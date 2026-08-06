@@ -141,6 +141,8 @@ CMakeFiles/PhysicsEngineDemo.dir/Demo/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/bits/ostream.tcc \
  C:/msys64/mingw64/include/c++/15.2.0/istream \
  C:/msys64/mingw64/include/c++/15.2.0/bits/istream.tcc \
+ C:/msys64/mingw64/include/c++/15.2.0/cassert \
+ C:/msys64/mingw64/include/assert.h \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec2.h \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat2.h \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/MathUtils.h \
@@ -161,4 +163,6 @@ CMakeFiles/PhysicsEngineDemo.dir/Demo/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/15.2.0/tr1/poly_laguerre.tcc \
  C:/msys64/mingw64/include/c++/15.2.0/tr1/riemann_zeta.tcc \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec3.h \
- D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat3.h
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat3.h \
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec4.h \
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat4.h

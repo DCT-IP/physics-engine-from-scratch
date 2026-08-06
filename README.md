@@ -162,14 +162,14 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ### Vector Mathematics
 
 - [x] Vec2
-- [ ] Vec3
-- [ ] Vec4
+- [x] Vec3
+- [x] Vec4
 
 ### Matrix Mathematics
 
 - [x] Mat2
-- [ ] Mat3
-- [ ] Mat4
+- [x] Mat3
+- [x] Mat4
 
 ### Transformations
 

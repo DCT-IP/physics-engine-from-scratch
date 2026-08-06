@@ -1,10 +1,12 @@
 #include <iostream>
-
+#include <cassert>
 #include "../Core/Math/Vec2.h"
 #include "../Core/Math/Mat2.h"
 #include "../Core/Math/MathUtils.h"
 #include "../Core/Math/Vec3.h"
 #include "../Core/Math/Mat3.h"
+#include "../Core/Math/Vec4.h"
+#include "../Core/Math/Mat4.h"
 
 using namespace Math;
 
@@ -206,7 +208,69 @@ int main()
               << translatedPoint.x << ", " 
               << translatedPoint.y << ", " 
               << translatedPoint.z << ")\n";
+    Vec4 a;
+    assert(a.IsZero());
 
+    Vec4 b(1,2,3,4);
+    Vec4 c(5,6,7,8);
+
+    assert((b+c)==Vec4(6,8,10,12));
+    assert((c-b)==Vec4(4,4,4,4));
+    assert((b*2)==Vec4(2,4,6,8));
+    assert((b/2)==Vec4(0.5f,1,1.5f,2));
+
+    Vec4 d=b;
+    d+=c;
+    assert(d==Vec4(6,8,10,12));
+
+    d=b;
+    d-=c;
+    assert(d==Vec4(-4,-4,-4,-4));
+
+    d=b;
+    d*=2;
+    assert(d==Vec4(2,4,6,8));
+
+    d/=2;
+    assert(d==b);
+
+    assert((-b)==Vec4(-1,-2,-3,-4));
+
+    assert(b.Dot(c)==70.0f);
+
+    assert(b.LengthSquared()==30.0f);
+
+    Vec4 n=b.Normalized();
+    assert(std::abs(n.Length()-1.0f)<1e-5f);
+
+    std::cout<<"All Vec4 tests passed!\n";
+    std::cout << "\n========== Mat4 ==========\n";
+
+    Math::Mat4 A(
+        1,2,3,4,
+        5,6,7,8,
+        9,10,11,12,
+        13,14,15,16
+    );
+
+    Math::Mat4 I = Math::Mat4::Identity();
+
+    Math::Mat4 add = A + I;
+    Math::Mat4 sub = A - I;
+    Math::Mat4 mul = A * 2.0f;
+    Math::Mat4 mat4Trans = A.Transpose(); // Changed from 'trans' to avoid redefinition error
+
+    Math::Vec4 v(1,2,3,1);
+    Math::Vec4 result = I * v;
+
+    std::cout << "Identity * Vec4 = ("
+              << result.x << ", "
+              << result.y << ", "
+              << result.z << ", "
+              << result.w << ")\n";
+
+    std::cout << "Transpose completed.\n";
+    std::cout << "Matrix multiplication completed.\n";
     std::cout << "=========================================================\n";
 
     return 0;

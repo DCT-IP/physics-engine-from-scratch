@@ -19,6 +19,8 @@ set(ENGINE_SOURCES
     Core/Math/MathUtils.cpp
     Core/Math/Vec3.cpp
     Core/Math/Mat3.cpp
+    Core/Math/Vec4.cpp
+    Core/Math/Mat4.cpp
 )
 
 set(ENGINE_HEADERS
@@ -27,6 +29,8 @@ set(ENGINE_HEADERS
     Core/Math/MathUtils.h
     Core/Math/Vec3.h
     Core/Math/Mat3.h
+    Core/Math/Vec4.h
+    Core/Math/Mat4.h
 )
 
 # ==========================================================
@@ -72,5 +76,14 @@ add_executable(MathUtilsTests
 
 add_executable(Vec3Tests
     Tests/Vec3Tests.cpp
+    ${ENGINE_SOURCES}
+)
+
+add_executable(Vec4Tests
+    Tests/Vec4Tests.cpp
+    ${ENGINE_SOURCES}
+)
+add_executable(Mat4Tests
+    Tests/Mat4Tests.cpp
     ${ENGINE_SOURCES}
 )
