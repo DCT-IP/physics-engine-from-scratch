@@ -195,7 +195,7 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ### Transformations
 
 - [x] Transform2D
-- [ ] Transform3D
+- [x] Transform3D
 
 ### Rotations
 
@@ -302,6 +302,7 @@ cmake --build Build --target Mat2Tests
 cmake --build Build --target Mat3Tests
 cmake --build Build --target Mat4Tests
 cmake --build Build --target Transform2DTests
+cmake --build Build --target Transform3DTests
 ```
 ---
 
@@ -323,7 +324,8 @@ Run the test suite:
 ./Build/Mat2Tests.exe
 ./Build/Mat3Tests.exe
 ./Build/Mat4Tests.exe
-./Build/Transform2dTests.exe
+./Build/Transform2DTests.exe
+./Build/Transform3DTests.exe
 ```
 
 ---
@@ -364,6 +366,8 @@ cmake --build Build --target MathUtilsTests
 
 cmake --build Build --target Transform2DTests
 
+cmake --build Build --target Transform3DTests
+
 ./Build/PhysicsEngineDemo.exe
 
 ./Build/Vec2Tests.exe
@@ -373,6 +377,8 @@ cmake --build Build --target Transform2DTests
 ./Build/MathUtilsTests.exe
 
 ./Build/Transform2DTests.exe
+
+./Build/Transform3DTests.exe
 ```
 
 > **Note:** Editing a source file does **not** automatically update the executable. The project must be rebuilt before running the latest changes.
