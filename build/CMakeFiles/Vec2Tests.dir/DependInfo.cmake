@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat4.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/MathUtils.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Transform2D.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/Transform2D.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/Transform2D.cpp.obj.d"
+  "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Transform3D.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/Transform3D.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/Transform3D.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec2.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec3.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj.d"
   "D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec4.cpp" "CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj" "gcc" "CMakeFiles/Vec2Tests.dir/Core/Math/Vec4.cpp.obj.d"

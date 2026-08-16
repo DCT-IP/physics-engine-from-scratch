@@ -8,7 +8,7 @@
 #include "../Core/Math/Vec4.h"
 #include "../Core/Math/Mat4.h"
 #include "../Core/Math/Transform2D.h"
-
+#include "../Core/Math/Transform3D.h"
 
 using namespace Math;
 
@@ -327,6 +327,54 @@ std::cout << "Rotation = "
 std::cout << "Scale = ("
           << identity.scale.x << ", "
           << identity.scale.y << ")\n\n";
+    std::cout << "=========================================================\n";
+
+    std::cout << "\n===== Transform3D =====\n";
+
+Math::Transform3D transform3(
+    Math::Vec3(10.0f, 20.0f, 30.0f),
+    Math::Vec3(2.0f, 2.0f, 2.0f)
+);
+
+Math::Vec3 point(1.0f, 2.0f, 3.0f);
+
+Math::Vec3 transformed = transform3.TransformPoint(point);
+
+std::cout << "Original Point: ("
+          << point.x << ", "
+          << point.y << ", "
+          << point.z << ")\n";
+
+std::cout << "Position: ("
+          << transform3.GetPosition().x << ", "
+          << transform3.GetPosition().y << ", "
+          << transform3.GetPosition().z << ")\n";
+
+std::cout << "Scale: ("
+          << transform3.GetScale().x << ", "
+          << transform3.GetScale().y << ", "
+          << transform3.GetScale().z << ")\n";
+
+std::cout << "Transformed Point: ("
+          << transformed.x << ", "
+          << transformed.y << ", "
+          << transformed.z << ")\n";
+
+transform3.Translate(Math::Vec3(1.0f, 2.0f, 3.0f));
+
+std::cout << "After Translation: ("
+          << transform3.GetPosition().x << ", "
+          << transform3.GetPosition().y << ", "
+          << transform3.GetPosition().z << ")\n";
+
+transform3.Scale(Math::Vec3(2.0f, 2.0f, 2.0f));
+
+std::cout << "After Scaling: ("
+          << transform3.GetScale().x << ", "
+          << transform3.GetScale().y << ", "
+          << transform3.GetScale().z << ")\n";
+              std::cout << "=========================================================\n";
+
 
     return 0;
 }
