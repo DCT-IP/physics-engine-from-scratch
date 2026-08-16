@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Vec2Tests.dir/Core/Math/Mat4.cpp.obj.d"
   "CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj"
   "CMakeFiles/Vec2Tests.dir/Core/Math/MathUtils.cpp.obj.d"
+  "CMakeFiles/Vec2Tests.dir/Core/Math/Transform2D.cpp.obj"
+  "CMakeFiles/Vec2Tests.dir/Core/Math/Transform2D.cpp.obj.d"
   "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj"
   "CMakeFiles/Vec2Tests.dir/Core/Math/Vec2.cpp.obj.d"
   "CMakeFiles/Vec2Tests.dir/Core/Math/Vec3.cpp.obj"

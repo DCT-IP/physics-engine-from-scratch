@@ -165,4 +165,6 @@ CMakeFiles/PhysicsEngineDemo.dir/Demo/main.cpp.obj: \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec3.h \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat3.h \
  D:/GitHub_works/physics-engine-from-scratch/Core/Math/Vec4.h \
- D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat4.h
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Mat4.h \
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/Transform2D.h \
+ D:/GitHub_works/physics-engine-from-scratch/Core/Math/MathUtils.h

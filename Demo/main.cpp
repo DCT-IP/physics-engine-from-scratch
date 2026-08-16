@@ -7,6 +7,8 @@
 #include "../Core/Math/Mat3.h"
 #include "../Core/Math/Vec4.h"
 #include "../Core/Math/Mat4.h"
+#include "../Core/Math/Transform2D.h"
+
 
 using namespace Math;
 
@@ -272,6 +274,59 @@ int main()
     std::cout << "Transpose completed.\n";
     std::cout << "Matrix multiplication completed.\n";
     std::cout << "=========================================================\n";
+    std::cout << "\n===== Transform2D =====\n";
+
+Math::Transform2D transform;
+
+std::cout << "Initial Transform:\n";
+std::cout << "Position = ("
+          << transform.position.x << ", "
+          << transform.position.y << ")\n";
+
+std::cout << "Rotation = "
+          << transform.rotation << "\n";
+
+std::cout << "Scale = ("
+          << transform.scale.x << ", "
+          << transform.scale.y << ")\n\n";
+
+// Translation
+transform.Translate(Math::Vec2(5.0f, 3.0f));
+
+std::cout << "After Translation:\n";
+std::cout << "Position = ("
+          << transform.position.x << ", "
+          << transform.position.y << ")\n\n";
+
+// Rotation
+transform.Rotate(1.5708f);
+
+std::cout << "After Rotation:\n";
+std::cout << "Rotation = "
+          << transform.rotation << " radians\n\n";
+
+// Scale
+transform.Scale(Math::Vec2(2.0f, 3.0f));
+
+std::cout << "After Scaling:\n";
+std::cout << "Scale = ("
+          << transform.scale.x << ", "
+          << transform.scale.y << ")\n\n";
+
+// Identity
+Math::Transform2D identity = Math::Transform2D::Identity();
+
+std::cout << "Identity Transform:\n";
+std::cout << "Position = ("
+          << identity.position.x << ", "
+          << identity.position.y << ")\n";
+
+std::cout << "Rotation = "
+          << identity.rotation << "\n";
+
+std::cout << "Scale = ("
+          << identity.scale.x << ", "
+          << identity.scale.y << ")\n\n";
 
     return 0;
 }

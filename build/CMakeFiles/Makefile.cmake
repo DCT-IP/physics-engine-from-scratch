@@ -59,4 +59,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/Vec3Tests.dir/DependInfo.cmake"
   "CMakeFiles/Vec4Tests.dir/DependInfo.cmake"
   "CMakeFiles/Mat4Tests.dir/DependInfo.cmake"
+  "CMakeFiles/Transform2DTests.dir/DependInfo.cmake"
   )
