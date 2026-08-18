@@ -23,6 +23,7 @@ set(ENGINE_SOURCES
     Core/Math/Mat4.cpp
     Core/Math/Transform2D.cpp
     Core/Math/Transform3D.cpp
+    Core/Math/Quaternion.cpp
 )
 
 set(ENGINE_HEADERS
@@ -35,6 +36,7 @@ set(ENGINE_HEADERS
     Core/Math/Mat4.h
     Core/Math/Transform2D.h
     Core/Math/Transform3D.h
+    Core/Math/Quaternion.h
 )
 
 # ==========================================================
@@ -97,5 +99,9 @@ add_executable(Transform2DTests
 )
 add_executable(Transform3DTests
     Tests/Transform3DTests.cpp
+    ${ENGINE_SOURCES}
+)
+add_executable(QuaternionTests
+    Tests/QuaternionTests.cpp
     ${ENGINE_SOURCES}
 )

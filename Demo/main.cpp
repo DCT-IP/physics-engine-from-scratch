@@ -9,6 +9,7 @@
 #include "../Core/Math/Mat4.h"
 #include "../Core/Math/Transform2D.h"
 #include "../Core/Math/Transform3D.h"
+#include "../Core/Math/Quaternion.h"
 
 using namespace Math;
 
@@ -374,6 +375,55 @@ std::cout << "After Scaling: ("
           << transform3.GetScale().y << ", "
           << transform3.GetScale().z << ")\n";
               std::cout << "=========================================================\n";
+              std::cout << "\n===== Quaternion =====\n";
+
+Math::Quaternion identityQ = Math::Quaternion::Identity();
+
+std::cout << "Identity = ("
+          << identityQ.w << ", "
+          << identityQ.x << ", "
+          << identityQ.y << ", "
+          << identityQ.z << ")\n";
+
+Math::Vec3 axis(0.0f, 0.0f, 1.0f);
+
+Math::Quaternion rotation =
+    Math::Quaternion::FromAxisAngle(
+        axis,
+        Math::PI / 2.0f
+    );
+
+std::cout << "Rotation Quaternion = ("
+          << rotation.w << ", "
+          << rotation.x << ", "
+          << rotation.y << ", "
+          << rotation.z << ")\n";
+
+Math::Vec3 vector(1.0f, 0.0f, 0.0f);
+
+Math::Vec3 rotated = rotation.Rotate(vector);
+
+std::cout << "Original Vector = ("
+          << vector.x << ", "
+          << vector.y << ", "
+          << vector.z << ")\n";
+
+std::cout << "Rotated Vector = ("
+          << rotated.x << ", "
+          << rotated.y << ", "
+          << rotated.z << ")\n";
+
+std::cout << "Quaternion Length = "
+          << rotation.Length()
+          << "\n";
+
+Math::Quaternion conjugate = rotation.Conjugate();
+
+std::cout << "Conjugate = ("
+          << conjugate.w << ", "
+          << conjugate.x << ", "
+          << conjugate.y << ", "
+          << conjugate.z << ")\n";
 
 
     return 0;
