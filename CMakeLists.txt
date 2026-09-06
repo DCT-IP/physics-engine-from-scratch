@@ -25,6 +25,8 @@ set(ENGINE_SOURCES
     Core/Math/Transform2D.cpp
     Core/Math/Transform3D.cpp
     Core/Math/Quaternion.cpp
+
+    Physics/Body.cpp
 )
 
 set(ENGINE_HEADERS
@@ -38,6 +40,8 @@ set(ENGINE_HEADERS
     Core/Math/Transform2D.h
     Core/Math/Transform3D.h
     Core/Math/Quaternion.h
+
+    Physics/Body.h
 )
 
 # ==========================================================
@@ -48,12 +52,11 @@ add_library(PhysicsEngineCore
     ${ENGINE_SOURCES}
     ${ENGINE_HEADERS}
 )
-
 target_include_directories(PhysicsEngineCore
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Core/Math
+        ${CMAKE_CURRENT_SOURCE_DIR}/Physics
 )
-
 # ==========================================================
 # Demo
 # ==========================================================
@@ -68,12 +71,12 @@ target_link_libraries(PhysicsEngineDemo
 )
 
 # ==========================================================
-# Math Tests
+# Tests
 # ==========================================================
 
 enable_testing()
 
-set(MATH_TEST_SOURCES
+set(TEST_SOURCES
     Tests/Maths/Vec2Tests.cpp
     Tests/Maths/Mat2Tests.cpp
     Tests/Maths/Mat3Tests.cpp
@@ -84,21 +87,24 @@ set(MATH_TEST_SOURCES
     Tests/Maths/Transform2DTests.cpp
     Tests/Maths/Transform3DTests.cpp
     Tests/Maths/QuaternionTests.cpp
+
+    Tests/Physics/BodyTests.cpp
 )
 
-foreach(TEST_SRC ${MATH_TEST_SOURCES})
-    # Extracts target name from path (e.g. "QuaternionTests")
+foreach(TEST_SRC ${TEST_SOURCES})
     get_filename_component(TEST_NAME ${TEST_SRC} NAME_WE)
-    
+
     add_executable(${TEST_NAME} ${TEST_SRC})
-    
+
     target_link_libraries(${TEST_NAME}
         PRIVATE
             PhysicsEngineCore
     )
-    
-    # Resolves M_PI missing scope errors on MSVC/MinGW
-    target_compile_definitions(${TEST_NAME} PRIVATE _USE_MATH_DEFINES)
-    
+
+    target_compile_definitions(${TEST_NAME}
+        PRIVATE
+            _USE_MATH_DEFINES
+    )
+
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endforeach()

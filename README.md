@@ -202,17 +202,21 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ---
 
 ## Milestone 2 — Simulation Core
-- [ ] Time Management
-- [ ] Particle
-- [ ] Particle System
-- [ ] Force Generators
+- [ ] Particle / Body State
 - [ ] Numerical Integrators
+- [ ] Force Generators
+- [ ] Particle / Body System
+- [ ] Time Management
+- [ ] Fixed Timestep
+- [ ] Simulation World
 
 ---
-## Milestone 3 — Collision
+
+## Milestone 3 — Collision Detection
 - [ ] Bounding Volumes
 - [ ] Broad Phase
 - [ ] Narrow Phase
+- [ ] Contact Generation
 - [ ] Collision Detection
 - [ ] Collision Resolution
 
@@ -220,7 +224,10 @@ Every public feature added to the engine is accompanied by corresponding tests b
 
 ## Milestone 4 — Rigid Body Dynamics
 - [ ] Rigid Body
+- [ ] Moment of Inertia
 - [ ] Angular Motion
+- [ ] Torque
+- [ ] Quaternion-Based Rotation
 - [ ] Constraints
 - [ ] Joints
 
@@ -228,7 +235,9 @@ Every public feature added to the engine is accompanied by corresponding tests b
 
 ## Milestone 5 — Engine Systems
 - [ ] Spatial Partitioning
+- [ ] Physics World
 - [ ] Memory Management
+- [ ] Object Pooling
 - [ ] Optimization
 - [ ] Profiling
 - [ ] Multithreading
@@ -241,6 +250,7 @@ Every public feature added to the engine is accompanied by corresponding tests b
 - [ ] OpenGL Renderer
 - [ ] Camera System
 - [ ] Scene Visualization
+- [ ] Physics Debug Visualization
 
 ---
 
