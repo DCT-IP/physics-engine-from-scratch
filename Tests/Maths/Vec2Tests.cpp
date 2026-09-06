@@ -1,5 +1,5 @@
-#include "../Core/Math/Vec2.h"
-#include "../Core/Math/MathUtils.h"
+#include "Vec2.h"
+#include "MathUtils.h"
 
 #include <cassert>
 #include <cmath>

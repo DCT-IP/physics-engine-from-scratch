@@ -1,4 +1,4 @@
-#include "../Core/Math/Mat4.h"
+#include "Mat4.h"
 #include <cassert>
 #include <iostream>
 

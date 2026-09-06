@@ -1,9 +1,11 @@
 #include "Quaternion.h"
-
+#include <numbers>
 #include <cassert>
 #include <cmath>
 #include <iostream>
-
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
 bool NearlyEqual(float a, float b, float epsilon = 0.0001f)
 {
     return std::fabs(a - b) < epsilon;

@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
-#include "../Core/Math/Mat3.h"
-#include "../Core/Math/Vec3.h"
-#include "../Core/Math/MathUtils.h"
+#include "Mat3.h"
+#include "Vec3.h"
+#include "MathUtils.h"
 
 using namespace Math;
 

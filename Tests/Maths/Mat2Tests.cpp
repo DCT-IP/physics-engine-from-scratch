@@ -2,7 +2,7 @@
 #include <cmath>
 #include <iostream>
 
-#include "../Core/Math/Mat2.h"
+#include "Mat2.h"
 
 using namespace Math;
 

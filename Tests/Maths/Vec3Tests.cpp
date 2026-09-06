@@ -2,8 +2,8 @@
 #include <cmath>
 #include <iostream>
 
-#include "../Core/Math/Vec3.h"
-#include "../Core/Math/MathUtils.h"
+#include "Vec3.h"
+#include "MathUtils.h"
 
 using namespace Math;
 

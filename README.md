@@ -66,7 +66,7 @@ PhysicsEngine/
 └── README.md
 ```
 
-# Engine Architecutre
+# Engine Architecture
 
 The project is organized into independent modules
 ```
@@ -83,7 +83,10 @@ The project is organized into independent modules
      │     ├── Vec4
      │     ├── Mat2
      │     ├── Mat3
-     │     └── Mat4
+     │     ├── Mat4
+     │     ├── Transform2d
+     |     ├── Transform3d
+     │     └── Quaternion
      │
      └── Utilities
 ```
@@ -131,7 +134,6 @@ Rendering is intentionally separated from the physics simulation so that either 
 Small demonstration applications showcasing individual engine modules.
 
 Implemented demonstrations:
-
 - Math utility functions
 - Vec2
 - Vec3
@@ -139,12 +141,12 @@ Implemented demonstrations:
 - Mat2
 - Mat3
 - Mat4
-
-Planned demonstrations:
-
 - Transform2D
 - Transform3D
 - Quaternion
+
+
+Planned demonstrations:
 - Particle simulation
 - Force generators
 - Numerical integration
@@ -166,7 +168,9 @@ Implemented test suites:
 - Mat2Tests
 - Mat3Tests
 - Mat4Tests
-
+- Transform2dTests
+- Transform3dTests
+- QuaternionTests
 Every public feature added to the engine is accompanied by corresponding tests before integration.
 ---
 
@@ -175,36 +179,29 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ---
 
 ## Milestone 1 — Core Mathematics
-
-### Mathematics' Utility
-
+### Mathematics' Utilities
 - [x] MathUtils
 
 ### Vector Mathematics
-
 - [x] Vec2
 - [x] Vec3
 - [x] Vec4
 
 ### Matrix Mathematics
-
 - [x] Mat2
 - [x] Mat3
 - [x] Mat4
 
 ### Transformations
-
 - [x] Transform2D
 - [x] Transform3D
 
 ### Rotations
-
-- [ ] Quaternion
+- [x] Quaternion
 
 ---
 
 ## Milestone 2 — Simulation Core
-
 - [ ] Time Management
 - [ ] Particle
 - [ ] Particle System
@@ -212,9 +209,7 @@ Every public feature added to the engine is accompanied by corresponding tests b
 - [ ] Numerical Integrators
 
 ---
-
 ## Milestone 3 — Collision
-
 - [ ] Bounding Volumes
 - [ ] Broad Phase
 - [ ] Narrow Phase
@@ -224,7 +219,6 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ---
 
 ## Milestone 4 — Rigid Body Dynamics
-
 - [ ] Rigid Body
 - [ ] Angular Motion
 - [ ] Constraints
@@ -233,7 +227,6 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ---
 
 ## Milestone 5 — Engine Systems
-
 - [ ] Spatial Partitioning
 - [ ] Memory Management
 - [ ] Optimization
@@ -243,7 +236,6 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ---
 
 ## Milestone 6 — Rendering
-
 - [ ] Debug Renderer
 - [ ] SDL2 Integration
 - [ ] OpenGL Renderer
@@ -291,96 +283,43 @@ Build individual modules:
 
 ```bash
 cmake --build Build --target PhysicsEngineDemo
-
 cmake --build Build --target MathUtilsTests
-
 cmake --build Build --target Vec2Tests
 cmake --build Build --target Vec3Tests
 cmake --build Build --target Vec4Tests
-
 cmake --build Build --target Mat2Tests
 cmake --build Build --target Mat3Tests
 cmake --build Build --target Mat4Tests
 cmake --build Build --target Transform2DTests
 cmake --build Build --target Transform3DTests
+cmake --build Build --target QuaternionTests
+
 ```
 ---
 
 ## Run
 
 Run the demo:
-
 ```bash
 ./Build/PhysicsEngineDemo.exe
 ```
-
+Run the entire test suite at once:
+```bash
+ctest --test-dir Build --output-on-failure
+```
 Run the test suite:
-
 ```bash
 ./Build/Vec2Tests.exe
 ./Build/Vec3Tests.exe
 ./Build/Vec4Tests.exe
-
 ./Build/Mat2Tests.exe
 ./Build/Mat3Tests.exe
 ./Build/Mat4Tests.exe
 ./Build/Transform2DTests.exe
 ./Build/Transform3DTests.exe
+./Build/QuaternionTests.exe
 ```
-
 ---
-
-## Development Workflow
-
-Whenever changes are made to the source code, follow this workflow:
-
-```
-Edit Source Code
-        │
-        ▼
-Build Project
-        │
-        ▼
-Run Demo
-        │
-        ▼
-Run Tests
-        │
-        ▼
-Debug
-        │
-        ▼
-Commit Changes
-```
-
-Example:
-
-```bash
-cmake --build Build --target PhysicsEngineDemo
-
-cmake --build Build --target Vec2Tests
-
-cmake --build Build --target Mat2Tests
-
-cmake --build Build --target MathUtilsTests
-
-cmake --build Build --target Transform2DTests
-
-cmake --build Build --target Transform3DTests
-
-./Build/PhysicsEngineDemo.exe
-
-./Build/Vec2Tests.exe
-
-./Build/Mat2Tests.exe
-
-./Build/MathUtilsTests.exe
-
-./Build/Transform2DTests.exe
-
-./Build/Transform3DTests.exe
-```
-
 > **Note:** Editing a source file does **not** automatically update the executable. The project must be rebuilt before running the latest changes.
 
 ---

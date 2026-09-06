@@ -1,7 +1,7 @@
 #include <cassert>
 #include <iostream>
 
-#include "../Core/Math/MathUtils.h"
+#include "MathUtils.h"
 
 int main()
 {

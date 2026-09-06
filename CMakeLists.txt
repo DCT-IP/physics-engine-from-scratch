@@ -8,6 +8,7 @@ project(PhysicsEngine VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # ==========================================================
 # Engine Sources
@@ -40,11 +41,17 @@ set(ENGINE_HEADERS
 )
 
 # ==========================================================
-# Include Directories
+# Engine Library
 # ==========================================================
 
-include_directories(
-    Core/Math
+add_library(PhysicsEngineCore
+    ${ENGINE_SOURCES}
+    ${ENGINE_HEADERS}
+)
+
+target_include_directories(PhysicsEngineCore
+    PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/Core/Math
 )
 
 # ==========================================================
@@ -53,55 +60,45 @@ include_directories(
 
 add_executable(PhysicsEngineDemo
     Demo/main.cpp
-    ${ENGINE_SOURCES}
+)
+
+target_link_libraries(PhysicsEngineDemo
+    PRIVATE
+        PhysicsEngineCore
 )
 
 # ==========================================================
-# Tests
+# Math Tests
 # ==========================================================
 
-add_executable(Vec2Tests
-    Tests/Vec2Tests.cpp
-    ${ENGINE_SOURCES}
+enable_testing()
+
+set(MATH_TEST_SOURCES
+    Tests/Maths/Vec2Tests.cpp
+    Tests/Maths/Mat2Tests.cpp
+    Tests/Maths/Mat3Tests.cpp
+    Tests/Maths/MathUtilsTests.cpp
+    Tests/Maths/Vec3Tests.cpp
+    Tests/Maths/Vec4Tests.cpp
+    Tests/Maths/Mat4Tests.cpp
+    Tests/Maths/Transform2DTests.cpp
+    Tests/Maths/Transform3DTests.cpp
+    Tests/Maths/QuaternionTests.cpp
 )
 
-add_executable(Mat2Tests
-    Tests/Mat2Tests.cpp
-    ${ENGINE_SOURCES}
-)
-
-add_executable(Mat3Tests
-    Tests/Mat3Tests.cpp
-    ${ENGINE_SOURCES}
-)
-
-add_executable(MathUtilsTests
-    Tests/MathUtilsTests.cpp
-    ${ENGINE_SOURCES}
-)
-
-add_executable(Vec3Tests
-    Tests/Vec3Tests.cpp
-    ${ENGINE_SOURCES}
-)
-
-add_executable(Vec4Tests
-    Tests/Vec4Tests.cpp
-    ${ENGINE_SOURCES}
-)
-add_executable(Mat4Tests
-    Tests/Mat4Tests.cpp
-    ${ENGINE_SOURCES}
-)
-add_executable(Transform2DTests
-    Tests/Transform2DTests.cpp
-    ${ENGINE_SOURCES}
-)
-add_executable(Transform3DTests
-    Tests/Transform3DTests.cpp
-    ${ENGINE_SOURCES}
-)
-add_executable(QuaternionTests
-    Tests/QuaternionTests.cpp
-    ${ENGINE_SOURCES}
-)
+foreach(TEST_SRC ${MATH_TEST_SOURCES})
+    # Extracts target name from path (e.g. "QuaternionTests")
+    get_filename_component(TEST_NAME ${TEST_SRC} NAME_WE)
+    
+    add_executable(${TEST_NAME} ${TEST_SRC})
+    
+    target_link_libraries(${TEST_NAME}
+        PRIVATE
+            PhysicsEngineCore
+    )
+    
+    # Resolves M_PI missing scope errors on MSVC/MinGW
+    target_compile_definitions(${TEST_NAME} PRIVATE _USE_MATH_DEFINES)
+    
+    add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
+endforeach()
