@@ -37,6 +37,9 @@ const Math::Vec2& Body::getVelocity() const
 {
     return velocity;
 }
+const Math::Vec2& Body::getAcceleration() const{
+    return acceleration;
+}
 float Body::getMass() const
 {
     return mass;

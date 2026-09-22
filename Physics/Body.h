@@ -13,6 +13,7 @@ public:
 
     const Math::Vec2& getPosition() const;
     const Math::Vec2& getVelocity() const;
+    const Math::Vec2& getAcceleration() const;
 
     float getMass() const;
     float getInverseMass() const;

@@ -129,7 +129,17 @@ void testForceAccumulation()
 
     std::cout << "[PASS] Force accumulation\n";
 }
+void testInitialAcceleration()
+{
+    Body body(Vec2(0.0f, 0.0f), 2.0f);
 
+    assertVec2Equal(
+        body.getAcceleration(),
+        Vec2(0.0f, 0.0f)
+    );
+
+    std::cout << "[PASS] Initial acceleration\n";
+}
 void testForceClearing()
 {
     Body body(Vec2(0.0f, 0.0f), 1.0f);
@@ -177,7 +187,50 @@ void testZeroForce()
     std::cout << "[PASS] Zero force\n";
 }
 
+void testAccelerationFromForce()
+{
+    Body body(Vec2(0.0f, 0.0f), 2.0f);
 
+    body.applyForce(Vec2(10.0f, 0.0f));
+
+    body.Integrate(0.0f);
+
+    // F = 10
+    // m = 2
+    // a = F / m
+    // a = 5
+
+    assertVec2Equal(
+        body.getAcceleration(),
+        Vec2(5.0f, 0.0f)
+    );
+
+    std::cout << "[PASS] Acceleration from force\n";
+}
+void testAccelerationAfterForceClearing()
+{
+    Body body(Vec2(0.0f, 0.0f), 2.0f);
+
+    body.applyForce(Vec2(10.0f, 0.0f));
+
+    body.Integrate(0.0f);
+
+    assertVec2Equal(
+        body.getAcceleration(),
+        Vec2(5.0f, 0.0f)
+    );
+
+    body.clearForces();
+
+    // Clearing the force accumulator should not alter
+    // the already calculated acceleration.
+    assertVec2Equal(
+        body.getAcceleration(),
+        Vec2(5.0f, 0.0f)
+    );
+
+    std::cout << "[PASS] Acceleration survives force clearing\n";
+}
 int main()
 {
     std::cout << "=== Body Tests ===\n\n";
@@ -189,6 +242,9 @@ int main()
     testForceAccumulation();
     testForceClearing();
     testZeroForce();
+    testInitialAcceleration();
+    testAccelerationFromForce();
+    testAccelerationAfterForceClearing();
 
     std::cout << "\nAll Body tests passed!\n";
 

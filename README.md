@@ -328,6 +328,7 @@ Run the test suite:
 ./Build/Transform2DTests.exe
 ./Build/Transform3DTests.exe
 ./Build/QuaternionTests.exe
+./Build/BodyTests.exe
 ```
 ---
 > **Note:** Editing a source file does **not** automatically update the executable. The project must be rebuilt before running the latest changes.
