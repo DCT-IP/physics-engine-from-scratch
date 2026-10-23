@@ -1,29 +1,29 @@
 #include "Body.h"
+#include <cmath>
+#include <stdexcept>
 
 Body::Body(const Math::Vec2& position, float mass)
     : position(position),
       velocity(0.0f, 0.0f),
       acceleration(0.0f, 0.0f),
       forceAccumulator(0.0f, 0.0f),
-      mass(mass)
+      mass(mass),
+      inverseMass(0.0f)
 {
-    if (mass != 0.0f) {
+    if (!std::isfinite(mass) || mass < 0.0f) {
+        throw std::invalid_argument(
+            "Body mass must be finite and non-negative"
+        );
+    }
+
+    if (mass > 0.0f) {
         inverseMass = 1.0f / mass;
-    } else {
-        inverseMass = 0.0f;
     }
 }
+
 void Body::applyForce(const Math::Vec2& force)
 {
     forceAccumulator += force;
-}
-void Body::Integrate(float deltaTime)
-{
-    if (inverseMass == 0.0f) return; 
-    acceleration = forceAccumulator * inverseMass;
-    velocity += acceleration * deltaTime;
-    position += velocity * deltaTime;
-    clearForces();
 }
 void Body::clearForces()
 {

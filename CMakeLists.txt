@@ -2,17 +2,11 @@ cmake_minimum_required(VERSION 3.20)
 
 project(PhysicsEngine VERSION 0.1 LANGUAGES CXX)
 
-# ==========================================================
-# C++ Standard
-# ==========================================================
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# ==========================================================
-# Engine Sources
-# ==========================================================
 
 set(ENGINE_SOURCES
     Core/Math/Vec2.cpp
@@ -27,6 +21,7 @@ set(ENGINE_SOURCES
     Core/Math/Quaternion.cpp
 
     Physics/Body.cpp
+    Physics/SemiImplicitEuler.cpp
 )
 
 set(ENGINE_HEADERS
@@ -42,40 +37,32 @@ set(ENGINE_HEADERS
     Core/Math/Quaternion.h
 
     Physics/Body.h
+    Physics/Integrator.h
+    Physics/SemiImplicitEuler.h
 )
 
-# ==========================================================
-# Engine Library
-# ==========================================================
 
 add_library(PhysicsEngineCore
     ${ENGINE_SOURCES}
     ${ENGINE_HEADERS}
 )
+
 target_include_directories(PhysicsEngineCore
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/Core/Math
         ${CMAKE_CURRENT_SOURCE_DIR}/Physics
 )
-# ==========================================================
-# Demo
-# ==========================================================
+
 
 add_executable(PhysicsEngineDemo
     Demo/main.cpp
 )
-
 target_link_libraries(PhysicsEngineDemo
     PRIVATE
         PhysicsEngineCore
 )
 
-# ==========================================================
-# Tests
-# ==========================================================
-
 enable_testing()
-
 set(TEST_SOURCES
     Tests/Maths/Vec2Tests.cpp
     Tests/Maths/Mat2Tests.cpp
@@ -89,22 +76,19 @@ set(TEST_SOURCES
     Tests/Maths/QuaternionTests.cpp
 
     Tests/Physics/BodyTests.cpp
+    Tests/Physics/SemiImplicitEulerTests.cpp
 )
 
 foreach(TEST_SRC ${TEST_SOURCES})
     get_filename_component(TEST_NAME ${TEST_SRC} NAME_WE)
-
     add_executable(${TEST_NAME} ${TEST_SRC})
-
     target_link_libraries(${TEST_NAME}
         PRIVATE
             PhysicsEngineCore
     )
-
     target_compile_definitions(${TEST_NAME}
         PRIVATE
             _USE_MATH_DEFINES
     )
-
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endforeach()
