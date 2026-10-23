@@ -1,4 +1,17 @@
  - removal of Integrator was perfomred as our integrator class became virtual by natural so we can make it into a base class 
  - Onto Force Generation                                                                                                           --- 23-10-2026(21:27)
  
- 
+ - Refactored the architecture by removing the standalone Integrator class and transitioning it into a clean, 
+ polymorphic base framework for natural extensibility.
+
+ - Shifted focus to Force Generation, successfully establishing the abstract ForceGenerator interface 
+ alongside concrete implementations for ConstantForce and Gravity system                                                           ---23-10-2026(21:48)
+
+ - The goal of a body system is to link the pre made semiimpliciteuler, gravity and constantforce. Thus make one call to control systems of particles 
+ - I will try to keep the flow such that system owns its body safely 
+
+  - used unique_ptr from std namespace to allow bodysystem class to own bodies
+ - ForceGenerator is not owned to keep the generators alive
+ - semi implicit euler is owned by the system
+ - update(dt), for each update, registered force is applied, then integrator processes
+every body and clears the body's accumulated forces.                                                                               ---23-10-2026(22:27)

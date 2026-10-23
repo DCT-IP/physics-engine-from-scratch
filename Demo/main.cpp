@@ -1,5 +1,10 @@
 #include <iostream>
 #include <cassert>
+#include <memory>
+#include "../Physics/Body.h"
+#include "../Physics/BodySystem.h"
+#include "../Physics/Gravity.h"
+#include "../Physics/ConstantForce.h"
 #include "../Core/Math/Vec2.h"
 #include "../Core/Math/Mat2.h"
 #include "../Core/Math/MathUtils.h"
@@ -12,7 +17,6 @@
 #include "../Core/Math/Quaternion.h"
 
 using namespace Math;
-
 int main()
 {
     // ==========================================
@@ -424,6 +428,66 @@ std::cout << "Conjugate = ("
           << conjugate.x << ", "
           << conjugate.y << ", "
           << conjugate.z << ")\n";
+          
+    // ==========================================
+    // Body System + Force Generators Demo
+    // ==========================================
+    std::cout << "\n===== Body System Demo =====\n";
+
+    
+    // ==========================================
+    // Body System + Force Generators Demo
+    // ==========================================
+    std::cout << "\n===== Body System Demo =====\n";
+
+    BodySystem system;
+
+    Body& fallingBody = system.addBody(
+        std::make_unique<Body>(
+            Math::Vec2(0.0f, 10.0f),
+            2.0f
+        )
+    );
+
+    Body& pushedBody = system.addBody(
+        std::make_unique<Body>(
+            Math::Vec2(5.0f, 0.0f),
+            2.0f
+        )
+    );
+
+    Gravity gravity(Math::Vec2(0.0f, -9.81f));
+    ConstantForce push(Math::Vec2(10.0f, 0.0f));
+
+    system.addForceGenerator(fallingBody, gravity);
+    system.addForceGenerator(pushedBody, push);
+
+    std::cout << "Initial body count: "
+              << system.getBodyCount() << '\n';
+
+    constexpr float dt = 0.1f;
+
+    for (int i = 1; i <= 5; ++i) {
+        system.update(dt);
+
+        std::cout << "\nStep " << i << '\n';
+
+        std::cout << "Falling body position: ("
+                  << fallingBody.getPosition().x << ", "
+                  << fallingBody.getPosition().y << ")\n";
+
+        std::cout << "Falling body velocity: ("
+                  << fallingBody.getVelocity().x << ", "
+                  << fallingBody.getVelocity().y << ")\n";
+
+        std::cout << "Pushed body position: ("
+                  << pushedBody.getPosition().x << ", "
+                  << pushedBody.getPosition().y << ")\n";
+
+        std::cout << "Pushed body velocity: ("
+                  << pushedBody.getVelocity().x << ", "
+                  << pushedBody.getVelocity().y << ")\n";
+    }
 
 
     return 0;
