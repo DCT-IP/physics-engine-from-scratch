@@ -1,10 +1,7 @@
 #include <iostream>
-#include <cassert>
+#include <iomanip>
 #include <memory>
-#include "../Physics/Body.h"
-#include "../Physics/BodySystem.h"
-#include "../Physics/Gravity.h"
-#include "../Physics/ConstantForce.h"
+
 #include "../Core/Math/Vec2.h"
 #include "../Core/Math/Mat2.h"
 #include "../Core/Math/MathUtils.h"
@@ -16,479 +13,304 @@
 #include "../Core/Math/Transform3D.h"
 #include "../Core/Math/Quaternion.h"
 
+#include "../Core/Time/Time.h"
+
+#include "../Physics/Body.h"
+#include "../Physics/Gravity.h"
+#include "../Physics/ConstantForce.h"
+#include "../Physics/FixedTimestep.h"
+#include "../Physics/SimulationWorld.h"
+
 using namespace Math;
-int main()
+
+// --------------------------------------------------
+// Helpers
+// --------------------------------------------------
+
+void printVec2(const Vec2& v)
 {
-    // ==========================================
-    // Mat2 Demo
-    // ==========================================
-    std::cout << "\n======================== Mat2 Demo =============================\n";
+    std::cout << "(" << v.x << ", " << v.y << ")";
+}
 
-    Mat2 mat2A(1.0f, 2.0f,
-               3.0f, 4.0f);
+void printVec3(const Vec3& v)
+{
+    std::cout << "(" << v.x << ", " << v.y << ", " << v.z << ")";
+}
 
-    Mat2 mat2B(5.0f, 6.0f,
-               7.0f, 8.0f);
+void printVec4(const Vec4& v)
+{
+    std::cout << "(" << v.x << ", " << v.y
+              << ", " << v.z << ", " << v.w << ")";
+}
 
-    std::cout << "Matrix A\n";
-    std::cout << mat2A.m00 << " " << mat2A.m01 << "\n";
-    std::cout << mat2A.m10 << " " << mat2A.m11 << "\n\n";
+void printSection(const char* title)
+{
+    std::cout << "\n========================================\n"
+              << title
+              << "\n========================================\n";
+}
 
-    std::cout << "Matrix B\n";
-    std::cout << mat2B.m00 << " " << mat2B.m01 << "\n";
-    std::cout << mat2B.m10 << " " << mat2B.m11 << "\n\n";
+// --------------------------------------------------
+// Math demonstrations
+// --------------------------------------------------
 
-    Mat2 mat2C = mat2A + mat2B;
-    std::cout << "A + B\n";
-    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
-    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
+void demoMath()
+{
+    printSection("Math Utilities");
 
-    mat2C = mat2A - mat2B;
-    std::cout << "A - B\n";
-    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
-    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
+    std::cout << "PI: " << PI << '\n';
+    std::cout << "Clamp(15, 0, 10): "
+              << Clamp(15.0f, 0.0f, 10.0f) << '\n';
+    std::cout << "Lerp(0, 100, 0.25): "
+              << Lerp(0.0f, 100.0f, 0.25f) << '\n';
+    std::cout << "90 degrees in radians: "
+              << DegreesToRadians(90.0f) << '\n';
 
-    mat2C = mat2A * 2.0f;
-    std::cout << "A * 2\n";
-    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
-    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
+    printSection("Vec2 and Mat2");
 
-    mat2C = mat2A * mat2B;
-    std::cout << "A * B\n";
-    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
-    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
+    Vec2 a(2.0f, 3.0f);
+    Vec2 b(4.0f, 1.0f);
 
-    Vec2 v2(2.0f, 3.0f);
-    Vec2 vec2Result = mat2A * v2;
-    std::cout << "A * Vec2 = (" << vec2Result.x << ", " << vec2Result.y << ")\n\n";
+    std::cout << "A = ";
+    printVec2(a);
+    std::cout << "\nB = ";
+    printVec2(b);
+    std::cout << "\nA + B = ";
+    printVec2(a + b);
+    std::cout << '\n';
 
-    std::cout << "Determinant = " << mat2A.Determinant() << "\n\n";
-    std::cout << "Trace = " << mat2A.Trace() << "\n\n";
-
-    mat2C = mat2A.Transposed();
-    std::cout << "Transpose\n";
-    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
-    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n\n";
-
-    mat2C = mat2A.Inverse();
-    std::cout << "Inverse\n";
-    std::cout << mat2C.m00 << " " << mat2C.m01 << "\n";
-    std::cout << mat2C.m10 << " " << mat2C.m11 << "\n";
-
-    // ==========================================
-    // MathUtils Demo
-    // ==========================================
-    std::cout << "\n========== MathUtils Demo ==========\n\n";
-
-    std::cout << "PI = " << Math::PI << '\n';
-    std::cout << "TWO_PI = " << Math::TWO_PI << '\n';
-    std::cout << "HALF_PI = " << Math::HALF_PI << "\n\n";
-
-    std::cout << "Clamp(15, 0, 10) = " << Math::Clamp(15.0f, 0.0f, 10.0f) << '\n';
-    std::cout << "Lerp(0, 100, 0.25) = " << Math::Lerp(0.0f, 100.0f, 0.25f) << '\n';
-    std::cout << "Min(3, 7) = " << Math::Min(3.0f, 7.0f) << '\n';
-    std::cout << "Max(3, 7) = " << Math::Max(3.0f, 7.0f) << '\n';
-    std::cout << "Abs(-42) = " << Math::Abs(-42.0f) << '\n';
-    std::cout << "Sign(-10) = " << Math::Sign(-10.0f) << '\n';
-    std::cout << "90 Degrees = " << Math::DegreesToRadians(90.0f) << " radians\n";
-    std::cout << "PI Radians = " << Math::RadiansToDegrees(Math::PI) << " degrees\n";
-    std::cout << "Square(6) = " << Math::Square(6.0f) << '\n';
-    std::cout << "Cube(4) = " << Math::Cube(4.0f) << '\n';
-    std::cout << "NearlyEqual(1.0, 1.0000001) = " << Math::NearlyEqual(1.0f, 1.0000001f) << '\n';
-    std::cout << "IsZero(0.00000001) = " << Math::IsZero(0.00000001f) << '\n';
-    std::cout << "IsFinite(42) = " << Math::IsFinite(42.0f) << '\n';
-
-    // ==========================================
-    // Vec3 Demo
-    // ==========================================
-    std::cout << "\n========== Vec3 Demo ==========\n\n";
-
-    Vec3 vec3A(1.0f, 2.0f, 3.0f);
-    Vec3 vec3B(4.0f, 5.0f, 6.0f);
-
-    std::cout << "A = (" << vec3A.x << ", " << vec3A.y << ", " << vec3A.z << ")\n";
-    std::cout << "B = (" << vec3B.x << ", " << vec3B.y << ", " << vec3B.z << ")\n\n";
-
-    Vec3 vec3Add = vec3A + vec3B;
-    std::cout << "A + B = (" << vec3Add.x << ", " << vec3Add.y << ", " << vec3Add.z << ")\n";
-
-    Vec3 vec3Sub = vec3A - vec3B;
-    std::cout << "A - B = (" << vec3Sub.x << ", " << vec3Sub.y << ", " << vec3Sub.z << ")\n";
-
-    Vec3 vec3Mul = vec3A * 2.0f;
-    std::cout << "A * 2 = (" << vec3Mul.x << ", " << vec3Mul.y << ", " << vec3Mul.z << ")\n";
-
-    Vec3 vec3Div = vec3A / 2.0f;
-    std::cout << "A / 2 = (" << vec3Div.x << ", " << vec3Div.y << ", " << vec3Div.z << ")\n";
-
-    std::cout << "Length(A) = " << vec3A.Length() << '\n';
-    std::cout << "Dot(A, B) = " << vec3A.Dot(vec3B) << '\n';
-
-    Vec3 vec3Cross = vec3A.Cross(vec3B);
-    std::cout << "Cross(A, B) = (" << vec3Cross.x << ", " << vec3Cross.y << ", " << vec3Cross.z << ")\n";
-
-    std::cout << "Distance(A, B) = " << vec3A.Distance(vec3B) << '\n';
-
-    Vec3 vec3Norm = vec3A.Normalized();
-    std::cout << "Normalized A = (" << vec3Norm.x << ", " << vec3Norm.y << ", " << vec3Norm.z << ")\n";
-
-    Vec3 vec3Zero;
-    std::cout << "Zero Vector? " << (vec3Zero.IsZero() ? "Yes" : "No") << '\n';
-
-    // ==========================================
-    // Mat3 Demo
-    // ==========================================
-    std::cout << "\n========== Mat3 Demo ==========\n\n";
-
-    Mat3 mat3A(1, 2, 3,
-               4, 5, 6,
-               7, 8, 10);
-
-    Mat3 mat3B(9, 8, 7,
-               6, 5, 4,
-               3, 2, 1);
-
-    std::cout << "Matrix A:\n";
-    std::cout << mat3A.m00 << " " << mat3A.m01 << " " << mat3A.m02 << "\n";
-    std::cout << mat3A.m10 << " " << mat3A.m11 << " " << mat3A.m12 << "\n";
-    std::cout << mat3A.m20 << " " << mat3A.m21 << " " << mat3A.m22 << "\n\n";
-
-    std::cout << "Matrix B:\n";
-    std::cout << mat3B.m00 << " " << mat3B.m01 << " " << mat3B.m02 << "\n";
-    std::cout << mat3B.m10 << " " << mat3B.m11 << " " << mat3B.m12 << "\n";
-    std::cout << mat3B.m20 << " " << mat3B.m21 << " " << mat3B.m22 << "\n\n";
-
-    Mat3 mat3D = mat3A + mat3B;
-    std::cout << "A + B:\n";
-    std::cout << mat3D.m00 << " " << mat3D.m01 << " " << mat3D.m02 << "\n";
-    std::cout << mat3D.m10 << " " << mat3D.m11 << " " << mat3D.m12 << "\n";
-    std::cout << mat3D.m20 << " " << mat3D.m21 << " " << mat3D.m22 << "\n\n";
-
-    Mat3 mat3E = mat3A - mat3B;
-    std::cout << "A - B:\n";
-    std::cout << mat3E.m00 << " " << mat3E.m01 << " " << mat3E.m02 << "\n";
-    std::cout << mat3E.m10 << " " << mat3E.m11 << " " << mat3E.m12 << "\n";
-    std::cout << mat3E.m20 << " " << mat3E.m21 << " " << mat3E.m22 << "\n\n";
-
-    Mat3 mat3F = mat3A * 2.0f;
-    std::cout << "A * 2.0:\n";
-    std::cout << mat3F.m00 << " " << mat3F.m01 << " " << mat3F.m02 << "\n";
-    std::cout << mat3F.m10 << " " << mat3F.m11 << " " << mat3F.m12 << "\n";
-    std::cout << mat3F.m20 << " " << mat3F.m21 << " " << mat3F.m22 << "\n\n";
-
-    Mat3 mat3G = mat3A * mat3B;
-    std::cout << "A * B:\n";
-    std::cout << mat3G.m00 << " " << mat3G.m01 << " " << mat3G.m02 << "\n";
-    std::cout << mat3G.m10 << " " << mat3G.m11 << " " << mat3G.m12 << "\n";
-    std::cout << mat3G.m20 << " " << mat3G.m21 << " " << mat3G.m22 << "\n\n";
-
-    Vec3 v3(1.0f, 2.0f, 3.0f);
-    Vec3 vec3Result = mat3A * v3;
-    std::cout << "A * Vec3 = (" << vec3Result.x << ", " << vec3Result.y << ", " << vec3Result.z << ")\n\n";
-
-    std::cout << "Determinant(A) = " << mat3A.Determinant() << "\n";
-    std::cout << "Trace(A) = " << mat3A.Trace() << "\n\n";
-
-    Mat3 mat3H = mat3A.Transposed();
-    std::cout << "Transpose(A):\n";
-    std::cout << mat3H.m00 << " " << mat3H.m01 << " " << mat3H.m02 << "\n";
-    std::cout << mat3H.m10 << " " << mat3H.m11 << " " << mat3H.m12 << "\n";
-    std::cout << mat3H.m20 << " " << mat3H.m21 << " " << mat3H.m22 << "\n\n";
-
-    Mat3 mat3I = mat3A.Inverse();
-    std::cout << "Inverse(A):\n";
-    std::cout << mat3I.m00 << " " << mat3I.m01 << " " << mat3I.m02 << "\n";
-    std::cout << mat3I.m10 << " " << mat3I.m11 << " " << mat3I.m12 << "\n";
-    std::cout << mat3I.m20 << " " << mat3I.m21 << " " << mat3I.m22 << "\n\n";
-
-    std::cout << "Is Identity? " << (mat3A.IsIdentity() ? "Yes" : "No") << "\n";
-    std::cout << "Is Zero? " << (mat3A.IsZero() ? "Yes" : "No") << "\n\n";
-
-    Mat3 rot = Mat3::Rotation(Math::HALF_PI);
-    Mat3 scale = Mat3::Scale(2.0f, 3.0f);
-    Mat3 trans = Mat3::Translation(5.0f, -2.0f);
-
-    Vec3 point2D(1.0f, 0.0f, 1.0f);
-    Vec3 translatedPoint = trans * point2D;
-
-    std::cout << "Translation (5, -2) of (1, 0, 1) = (" 
-              << translatedPoint.x << ", " 
-              << translatedPoint.y << ", " 
-              << translatedPoint.z << ")\n";
-    Vec4 a;
-    assert(a.IsZero());
-
-    Vec4 b(1,2,3,4);
-    Vec4 c(5,6,7,8);
-
-    assert((b+c)==Vec4(6,8,10,12));
-    assert((c-b)==Vec4(4,4,4,4));
-    assert((b*2)==Vec4(2,4,6,8));
-    assert((b/2)==Vec4(0.5f,1,1.5f,2));
-
-    Vec4 d=b;
-    d+=c;
-    assert(d==Vec4(6,8,10,12));
-
-    d=b;
-    d-=c;
-    assert(d==Vec4(-4,-4,-4,-4));
-
-    d=b;
-    d*=2;
-    assert(d==Vec4(2,4,6,8));
-
-    d/=2;
-    assert(d==b);
-
-    assert((-b)==Vec4(-1,-2,-3,-4));
-
-    assert(b.Dot(c)==70.0f);
-
-    assert(b.LengthSquared()==30.0f);
-
-    Vec4 n=b.Normalized();
-    assert(std::abs(n.Length()-1.0f)<1e-5f);
-
-    std::cout<<"All Vec4 tests passed!\n";
-    std::cout << "\n========== Mat4 ==========\n";
-
-    Math::Mat4 A(
-        1,2,3,4,
-        5,6,7,8,
-        9,10,11,12,
-        13,14,15,16
+    Mat2 matrix(
+        1.0f, 2.0f,
+        3.0f, 4.0f
     );
 
-    Math::Mat4 I = Math::Mat4::Identity();
+    std::cout << "Matrix determinant: "
+              << matrix.Determinant() << '\n';
+    std::cout << "Matrix trace: "
+              << matrix.Trace() << '\n';
+    std::cout << "Matrix * A = ";
+    printVec2(matrix * a);
+    std::cout << '\n';
 
-    Math::Mat4 add = A + I;
-    Math::Mat4 sub = A - I;
-    Math::Mat4 mul = A * 2.0f;
-    Math::Mat4 mat4Trans = A.Transpose(); // Changed from 'trans' to avoid redefinition error
+    printSection("Vec3 and Mat3");
 
-    Math::Vec4 v(1,2,3,1);
-    Math::Vec4 result = I * v;
+    Vec3 v3a(1.0f, 2.0f, 3.0f);
+    Vec3 v3b(4.0f, 5.0f, 6.0f);
 
-    std::cout << "Identity * Vec4 = ("
-              << result.x << ", "
-              << result.y << ", "
-              << result.z << ", "
-              << result.w << ")\n";
+    std::cout << "A = ";
+    printVec3(v3a);
+    std::cout << "\nB = ";
+    printVec3(v3b);
+    std::cout << "\nDot product: "
+              << v3a.Dot(v3b) << '\n';
+    std::cout << "Cross product: ";
+    printVec3(v3a.Cross(v3b));
+    std::cout << '\n';
 
-    std::cout << "Transpose completed.\n";
-    std::cout << "Matrix multiplication completed.\n";
-    std::cout << "=========================================================\n";
-    std::cout << "\n===== Transform2D =====\n";
+    Mat3 rotation = Mat3::Rotation(HALF_PI);
+    Vec3 point(1.0f, 0.0f, 1.0f);
 
-Math::Transform2D transform;
+    std::cout << "2D rotation matrix applied to point: ";
+    printVec3(rotation * point);
+    std::cout << '\n';
 
-std::cout << "Initial Transform:\n";
-std::cout << "Position = ("
-          << transform.position.x << ", "
-          << transform.position.y << ")\n";
+    printSection("Vec4 and Mat4");
 
-std::cout << "Rotation = "
-          << transform.rotation << "\n";
+    Vec4 v4(1.0f, 2.0f, 3.0f, 1.0f);
+    Mat4 identity = Mat4::Identity();
 
-std::cout << "Scale = ("
-          << transform.scale.x << ", "
-          << transform.scale.y << ")\n\n";
+    std::cout << "Vector: ";
+    printVec4(v4);
+    std::cout << "\nIdentity * vector: ";
+    printVec4(identity * v4);
+    std::cout << '\n';
 
-// Translation
-transform.Translate(Math::Vec2(5.0f, 3.0f));
+    printSection("Transforms");
 
-std::cout << "After Translation:\n";
-std::cout << "Position = ("
-          << transform.position.x << ", "
-          << transform.position.y << ")\n\n";
+    Transform2D transform2D;
+    transform2D.Translate(Vec2(5.0f, 3.0f));
+    transform2D.Rotate(HALF_PI);
+    transform2D.Scale(Vec2(2.0f, 2.0f));
 
-// Rotation
-transform.Rotate(1.5708f);
+    std::cout << "Transform2D position: ";
+    printVec2(transform2D.position);
+    std::cout << "\nRotation: "
+              << transform2D.rotation << " radians\n";
+    std::cout << "Scale: ";
+    printVec2(transform2D.scale);
+    std::cout << '\n';
 
-std::cout << "After Rotation:\n";
-std::cout << "Rotation = "
-          << transform.rotation << " radians\n\n";
-
-// Scale
-transform.Scale(Math::Vec2(2.0f, 3.0f));
-
-std::cout << "After Scaling:\n";
-std::cout << "Scale = ("
-          << transform.scale.x << ", "
-          << transform.scale.y << ")\n\n";
-
-// Identity
-Math::Transform2D identity = Math::Transform2D::Identity();
-
-std::cout << "Identity Transform:\n";
-std::cout << "Position = ("
-          << identity.position.x << ", "
-          << identity.position.y << ")\n";
-
-std::cout << "Rotation = "
-          << identity.rotation << "\n";
-
-std::cout << "Scale = ("
-          << identity.scale.x << ", "
-          << identity.scale.y << ")\n\n";
-    std::cout << "=========================================================\n";
-
-    std::cout << "\n===== Transform3D =====\n";
-
-Math::Transform3D transform3(
-    Math::Vec3(10.0f, 20.0f, 30.0f),
-    Math::Vec3(2.0f, 2.0f, 2.0f)
-);
-
-Math::Vec3 point(1.0f, 2.0f, 3.0f);
-
-Math::Vec3 transformed = transform3.TransformPoint(point);
-
-std::cout << "Original Point: ("
-          << point.x << ", "
-          << point.y << ", "
-          << point.z << ")\n";
-
-std::cout << "Position: ("
-          << transform3.GetPosition().x << ", "
-          << transform3.GetPosition().y << ", "
-          << transform3.GetPosition().z << ")\n";
-
-std::cout << "Scale: ("
-          << transform3.GetScale().x << ", "
-          << transform3.GetScale().y << ", "
-          << transform3.GetScale().z << ")\n";
-
-std::cout << "Transformed Point: ("
-          << transformed.x << ", "
-          << transformed.y << ", "
-          << transformed.z << ")\n";
-
-transform3.Translate(Math::Vec3(1.0f, 2.0f, 3.0f));
-
-std::cout << "After Translation: ("
-          << transform3.GetPosition().x << ", "
-          << transform3.GetPosition().y << ", "
-          << transform3.GetPosition().z << ")\n";
-
-transform3.Scale(Math::Vec3(2.0f, 2.0f, 2.0f));
-
-std::cout << "After Scaling: ("
-          << transform3.GetScale().x << ", "
-          << transform3.GetScale().y << ", "
-          << transform3.GetScale().z << ")\n";
-              std::cout << "=========================================================\n";
-              std::cout << "\n===== Quaternion =====\n";
-
-Math::Quaternion identityQ = Math::Quaternion::Identity();
-
-std::cout << "Identity = ("
-          << identityQ.w << ", "
-          << identityQ.x << ", "
-          << identityQ.y << ", "
-          << identityQ.z << ")\n";
-
-Math::Vec3 axis(0.0f, 0.0f, 1.0f);
-
-Math::Quaternion rotation =
-    Math::Quaternion::FromAxisAngle(
-        axis,
-        Math::PI / 2.0f
+    Transform3D transform3D(
+        Vec3(10.0f, 20.0f, 30.0f),
+        Vec3(2.0f, 2.0f, 2.0f)
     );
 
-std::cout << "Rotation Quaternion = ("
-          << rotation.w << ", "
-          << rotation.x << ", "
-          << rotation.y << ", "
-          << rotation.z << ")\n";
+    Vec3 originalPoint(1.0f, 2.0f, 3.0f);
 
-Math::Vec3 vector(1.0f, 0.0f, 0.0f);
+    std::cout << "Original 3D point: ";
+    printVec3(originalPoint);
+    std::cout << "\nTransformed point: ";
+    printVec3(transform3D.TransformPoint(originalPoint));
+    std::cout << '\n';
 
-Math::Vec3 rotated = rotation.Rotate(vector);
+    printSection("Quaternion");
 
-std::cout << "Original Vector = ("
-          << vector.x << ", "
-          << vector.y << ", "
-          << vector.z << ")\n";
-
-std::cout << "Rotated Vector = ("
-          << rotated.x << ", "
-          << rotated.y << ", "
-          << rotated.z << ")\n";
-
-std::cout << "Quaternion Length = "
-          << rotation.Length()
-          << "\n";
-
-Math::Quaternion conjugate = rotation.Conjugate();
-
-std::cout << "Conjugate = ("
-          << conjugate.w << ", "
-          << conjugate.x << ", "
-          << conjugate.y << ", "
-          << conjugate.z << ")\n";
-          
-    // ==========================================
-    // Body System + Force Generators Demo
-    // ==========================================
-    std::cout << "\n===== Body System Demo =====\n";
-
-    
-    // ==========================================
-    // Body System + Force Generators Demo
-    // ==========================================
-    std::cout << "\n===== Body System Demo =====\n";
-
-    BodySystem system;
-
-    Body& fallingBody = system.addBody(
-        std::make_unique<Body>(
-            Math::Vec2(0.0f, 10.0f),
-            2.0f
-        )
+    Quaternion q = Quaternion::FromAxisAngle(
+        Vec3(0.0f, 0.0f, 1.0f),
+        HALF_PI
     );
 
-    Body& pushedBody = system.addBody(
-        std::make_unique<Body>(
-            Math::Vec2(5.0f, 0.0f),
-            2.0f
-        )
-    );
+    Vec3 originalVector(1.0f, 0.0f, 0.0f);
 
-    Gravity gravity(Math::Vec2(0.0f, -9.81f));
-    ConstantForce push(Math::Vec2(10.0f, 0.0f));
+    std::cout << "Original vector: ";
+    printVec3(originalVector);
+    std::cout << "\nRotated vector: ";
+    printVec3(q.Rotate(originalVector));
+    std::cout << '\n';
+}
 
-    system.addForceGenerator(fallingBody, gravity);
-    system.addForceGenerator(pushedBody, push);
+// --------------------------------------------------
+// Time demonstration
+// --------------------------------------------------
 
-    std::cout << "Initial body count: "
-              << system.getBodyCount() << '\n';
+void demoTime()
+{
+    printSection("Time");
 
-    constexpr float dt = 0.1f;
+    Time timer;
 
-    for (int i = 1; i <= 5; ++i) {
-        system.update(dt);
+    std::cout << "Initial elapsed time: "
+              << timer.getElapsedTime() << " seconds\n";
 
-        std::cout << "\nStep " << i << '\n';
+    timer.tick();
 
-        std::cout << "Falling body position: ("
-                  << fallingBody.getPosition().x << ", "
-                  << fallingBody.getPosition().y << ")\n";
+    std::cout << "Delta time: "
+              << timer.getDeltaTime() << " seconds\n";
+    std::cout << "Elapsed time: "
+              << timer.getElapsedTime() << " seconds\n";
 
-        std::cout << "Falling body velocity: ("
-                  << fallingBody.getVelocity().x << ", "
-                  << fallingBody.getVelocity().y << ")\n";
+    timer.reset();
 
-        std::cout << "Pushed body position: ("
-                  << pushedBody.getPosition().x << ", "
-                  << pushedBody.getPosition().y << ")\n";
+    std::cout << "Elapsed time after reset: "
+              << timer.getElapsedTime() << " seconds\n";
+}
 
-        std::cout << "Pushed body velocity: ("
-                  << pushedBody.getVelocity().x << ", "
-                  << pushedBody.getVelocity().y << ")\n";
+// --------------------------------------------------
+// Fixed timestep demonstration
+// --------------------------------------------------
+
+void demoFixedTimestep()
+{
+    printSection("Fixed Timestep");
+
+    FixedTimestep timestep(1.0f / 60.0f);
+
+    std::size_t totalSteps = 0;
+
+    // Simulate three frames, each lasting 1/30 second.
+    for (int frame = 1; frame <= 3; ++frame) {
+        const std::size_t steps = timestep.advance(
+            1.0f / 30.0f,
+            [](float dt) {
+                // A physics update would execute here.
+                (void)dt;
+            }
+        );
+
+        totalSteps += steps;
+
+        std::cout << "Frame " << frame
+                  << ": physics steps = " << steps << '\n';
     }
 
+    std::cout << "Total physics steps: "
+              << totalSteps << '\n';
+    std::cout << "Remaining accumulated time: "
+              << timestep.getAccumulator() << " seconds\n";
+}
+
+// --------------------------------------------------
+// Simulation world demonstration
+// --------------------------------------------------
+
+void demoSimulationWorld()
+{
+    printSection("Simulation World");
+
+    constexpr float fixedDt = 1.0f / 60.0f;
+
+    SimulationWorld world(fixedDt, 8);
+
+    Body& fallingBody = world.addBody(
+        std::make_unique<Body>(
+            Vec2(0.0f, 10.0f),
+            2.0f
+        )
+    );
+
+    Body& pushedBody = world.addBody(
+        std::make_unique<Body>(
+            Vec2(5.0f, 0.0f),
+            2.0f
+        )
+    );
+
+    world.addForceGenerator(
+        fallingBody,
+        std::make_unique<Gravity>(
+            Vec2(0.0f, -9.81f)
+        )
+    );
+
+    world.addForceGenerator(
+        pushedBody,
+        std::make_unique<ConstantForce>(
+            Vec2(10.0f, 0.0f)
+        )
+    );
+
+    std::cout << "Bodies in world: "
+              << world.getBodyCount() << '\n';
+    std::cout << "Fixed timestep: "
+              << world.getFixedDeltaTime() << " seconds\n";
+
+    // Simulate 5 frames at approximately 30 FPS.
+    constexpr float frameDt = 1.0f / 30.0f;
+
+    for (int frame = 1; frame <= 5; ++frame) {
+        const std::size_t steps = world.advance(frameDt);
+
+        std::cout << "\nFrame " << frame
+                  << " | physics steps: " << steps << '\n';
+
+        std::cout << "Falling body position: ";
+        printVec2(fallingBody.getPosition());
+        std::cout << " | velocity: ";
+        printVec2(fallingBody.getVelocity());
+        std::cout << '\n';
+
+        std::cout << "Pushed body position: ";
+        printVec2(pushedBody.getPosition());
+        std::cout << " | velocity: ";
+        printVec2(pushedBody.getVelocity());
+        std::cout << '\n';
+    }
+}
+
+// --------------------------------------------------
+// Main
+// --------------------------------------------------
+
+int main()
+{
+    std::cout << std::fixed << std::setprecision(4);
+
+    demoMath();
+    demoTime();
+    demoFixedTimestep();
+    demoSimulationWorld();
+
+    printSection("Demo Complete");
 
     return 0;
 }

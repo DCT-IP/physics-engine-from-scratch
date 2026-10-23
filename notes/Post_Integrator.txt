@@ -28,3 +28,6 @@ next step is to give the sense of time
  - So Time class will store the elapsed time, we will use this FixedTime to accumulate the said elapsed time and decide how many physics 
 steps to run.
  - A way to prevent backlog from freezing the sim will be added too                                                                 ---23-10-2026(23:21)
+
+ - Now adding a simulationworld, this will act like a top-level coordinator for BodySystems, Force generations, time, etc
+ 

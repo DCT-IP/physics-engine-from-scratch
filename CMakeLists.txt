@@ -26,6 +26,7 @@ set(ENGINE_SOURCES
     Physics/ConstantForce.cpp
     Physics/BodySystem.cpp
     Physics/FixedTimestep.cpp
+    Physics/SimulationWorld.cpp
 )
 
 set(ENGINE_HEADERS
@@ -49,6 +50,7 @@ set(ENGINE_HEADERS
     Physics/ConstantForce.h
     Physics/BodySystem.h
     Physics/FixedTimestep.h
+    Physics/SimulationWorld.h
 )
 
 add_library(PhysicsEngineCore
@@ -90,6 +92,7 @@ set(TEST_SOURCES
     Tests/Physics/BodySystemTests.cpp
     Tests/Physics/TimeTests.cpp
     Tests/Physics/FixedTimestepTests.cpp
+    Tests/Physics/SimWorldTests.cpp
 )
 
 foreach(TEST_SRC ${TEST_SOURCES})

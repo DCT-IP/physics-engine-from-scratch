@@ -208,7 +208,7 @@ Every public feature added to the engine is accompanied by corresponding tests b
 - [x] Particle / Body System
 - [x] Time Management
 - [x] Fixed Timestep
-- [ ] Simulation World
+- [x] Simulation World
 
 ---
 
