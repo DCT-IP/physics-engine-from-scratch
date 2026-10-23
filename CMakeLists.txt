@@ -22,6 +22,8 @@ set(ENGINE_SOURCES
 
     Physics/Body.cpp
     Physics/SemiImplicitEuler.cpp
+    Physics/Gravity.cpp
+    Physics/ConstantForce.cpp
 )
 
 set(ENGINE_HEADERS
@@ -39,6 +41,8 @@ set(ENGINE_HEADERS
     Physics/Body.h
     Physics/Integrator.h
     Physics/SemiImplicitEuler.h
+    Physics/Gravity.h
+    Physics/ConstantForce.h
 )
 
 
@@ -77,6 +81,7 @@ set(TEST_SOURCES
 
     Tests/Physics/BodyTests.cpp
     Tests/Physics/SemiImplicitEulerTests.cpp
+    Tests/Physics/ForceGeneratorsTests.cpp
 )
 
 foreach(TEST_SRC ${TEST_SOURCES})

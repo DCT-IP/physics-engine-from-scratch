@@ -202,9 +202,9 @@ Every public feature added to the engine is accompanied by corresponding tests b
 ---
 
 ## Milestone 2 — Simulation Core
-- [ ] Particle / Body State
-- [ ] Numerical Integrators
-- [ ] Force Generators
+- [x] Particle / Body State
+- [x] Numerical Integrators
+- [x] Force Generators
 - [ ] Particle / Body System
 - [ ] Time Management
 - [ ] Fixed Timestep
