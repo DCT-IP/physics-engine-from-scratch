@@ -19,12 +19,15 @@ set(ENGINE_SOURCES
     Core/Math/Transform2D.cpp
     Core/Math/Transform3D.cpp
     Core/Math/Quaternion.cpp
+    
+    Core/Time/Time.cpp
 
     Physics/Body.cpp
     Physics/SemiImplicitEuler.cpp
     Physics/Gravity.cpp
     Physics/ConstantForce.cpp
     Physics/BodySystem.cpp
+    
 )
 
 set(ENGINE_HEADERS
@@ -39,6 +42,8 @@ set(ENGINE_HEADERS
     Core/Math/Transform3D.h
     Core/Math/Quaternion.h
 
+    Core/Time/Time.h
+    
     Physics/Body.h
     Physics/Integrator.h
     Physics/SemiImplicitEuler.h
@@ -85,6 +90,7 @@ set(TEST_SOURCES
     Tests/Physics/SemiImplicitEulerTests.cpp
     Tests/Physics/ForceGeneratorsTests.cpp
     Tests/Physics/BodySystemTests.cpp
+    Tests/Physics/TimeTests.cpp
 
 )
 

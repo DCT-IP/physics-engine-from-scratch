@@ -205,8 +205,8 @@ Every public feature added to the engine is accompanied by corresponding tests b
 - [x] Particle / Body State
 - [x] Numerical Integrators
 - [x] Force Generators
-- [ ] Particle / Body System
-- [ ] Time Management
+- [x] Particle / Body System
+- [x] Time Management
 - [ ] Fixed Timestep
 - [ ] Simulation World
 

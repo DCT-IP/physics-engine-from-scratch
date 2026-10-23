@@ -10,8 +10,15 @@
  - The goal of a body system is to link the pre made semiimpliciteuler, gravity and constantforce. Thus make one call to control systems of particles 
  - I will try to keep the flow such that system owns its body safely 
 
-  - used unique_ptr from std namespace to allow bodysystem class to own bodies
+ - used unique_ptr from std namespace to allow bodysystem class to own bodies
  - ForceGenerator is not owned to keep the generators alive
  - semi implicit euler is owned by the system
  - update(dt), for each update, registered force is applied, then integrator processes
 every body and clears the body's accumulated forces.                                                                               ---23-10-2026(22:27)
+
+ - Now that the engine can store bodies and make systems and relations among them, 
+next step is to give the sense of time
+ - Theoretically we have two kinds of time:-
+      1. Real Time: Time measured by computer's clock
+      2. Simulation Time: Time elpased in the world
+ - A time class will be made here                                                                                                  ---23-10-2026(23:03)

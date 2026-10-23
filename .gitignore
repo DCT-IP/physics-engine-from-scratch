@@ -3,6 +3,7 @@
 # ==========================================
 
 build/
+build-mingw/
 Build/
 cmake-build-debug/
 cmake-build-release/
