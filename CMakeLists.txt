@@ -2,11 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 
 project(PhysicsEngine VERSION 0.1 LANGUAGES CXX)
 
-
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-
 
 set(ENGINE_SOURCES
     Core/Math/Vec2.cpp
@@ -19,7 +17,7 @@ set(ENGINE_SOURCES
     Core/Math/Transform2D.cpp
     Core/Math/Transform3D.cpp
     Core/Math/Quaternion.cpp
-    
+
     Core/Time/Time.cpp
 
     Physics/Body.cpp
@@ -27,7 +25,7 @@ set(ENGINE_SOURCES
     Physics/Gravity.cpp
     Physics/ConstantForce.cpp
     Physics/BodySystem.cpp
-    
+    Physics/FixedTimestep.cpp
 )
 
 set(ENGINE_HEADERS
@@ -43,37 +41,37 @@ set(ENGINE_HEADERS
     Core/Math/Quaternion.h
 
     Core/Time/Time.h
-    
+
     Physics/Body.h
     Physics/Integrator.h
     Physics/SemiImplicitEuler.h
     Physics/Gravity.h
     Physics/ConstantForce.h
     Physics/BodySystem.h
+    Physics/FixedTimestep.h
 )
-
 
 add_library(PhysicsEngineCore
     ${ENGINE_SOURCES}
     ${ENGINE_HEADERS}
 )
 
-target_include_directories(PhysicsEngineCore
-    PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/Core/Math
-        ${CMAKE_CURRENT_SOURCE_DIR}/Physics
+target_include_directories(PhysicsEngineCore PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/Core/Math
+    ${CMAKE_CURRENT_SOURCE_DIR}/Physics
 )
-
 
 add_executable(PhysicsEngineDemo
     Demo/main.cpp
 )
+
 target_link_libraries(PhysicsEngineDemo
     PRIVATE
         PhysicsEngineCore
 )
 
 enable_testing()
+
 set(TEST_SOURCES
     Tests/Maths/Vec2Tests.cpp
     Tests/Maths/Mat2Tests.cpp
@@ -91,19 +89,23 @@ set(TEST_SOURCES
     Tests/Physics/ForceGeneratorsTests.cpp
     Tests/Physics/BodySystemTests.cpp
     Tests/Physics/TimeTests.cpp
-
+    Tests/Physics/FixedTimestepTests.cpp
 )
 
 foreach(TEST_SRC ${TEST_SOURCES})
     get_filename_component(TEST_NAME ${TEST_SRC} NAME_WE)
+
     add_executable(${TEST_NAME} ${TEST_SRC})
+
     target_link_libraries(${TEST_NAME}
         PRIVATE
             PhysicsEngineCore
     )
+
     target_compile_definitions(${TEST_NAME}
         PRIVATE
             _USE_MATH_DEFINES
     )
+
     add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endforeach()

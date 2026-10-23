@@ -22,3 +22,9 @@ next step is to give the sense of time
       1. Real Time: Time measured by computer's clock
       2. Simulation Time: Time elpased in the world
  - A time class will be made here                                                                                                  ---23-10-2026(23:03)
+
+
+ - we making a time accumulator, as storing the elapsed time traditionally is not enough 
+ - So Time class will store the elapsed time, we will use this FixedTime to accumulate the said elapsed time and decide how many physics 
+steps to run.
+ - A way to prevent backlog from freezing the sim will be added too                                                                 ---23-10-2026(23:21)
